@@ -15,18 +15,28 @@
 ##
 
 from . import RYZOM_API_BASE_URL
+from ryzomapi.sas import get
 
 class Guild:
     def __init__(self, gid, name, race, icon, creation_date, description):
-        self.gid = gid
-        self.name = name
-        self.race = race
-        self.icon = icon
-        self.creation_date = creation_date
-        self.description = description
+        self.gid = int(gid)
+        self.name = str(name)
+        self.race = str(race)
+        self.icon = str(icon)
+        self.creation_date = str(creation_date)
+        self.description = str(description)
 
     def __str__(self):
         return self.name
 
 def list_all():
-    pass
+    lst = []
+    data = get('guilds')
+    for node in data.findall('guild'):
+        lst.append(Guild(node.find('gid').text,
+                         node.find('name').text,
+                         node.find('race').text,
+                         node.find('icon').text,
+                         node.find('creation_date').text,
+                         node.find('description').text))
+    return lst
