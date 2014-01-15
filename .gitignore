@@ -20,6 +20,9 @@ lib
 lib64
 __pycache__
 
+# distutils
+MANIFEST
+
 # Installer logs
 pip-log.txt
 
