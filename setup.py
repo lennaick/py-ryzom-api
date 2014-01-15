@@ -11,8 +11,8 @@ except LookupError:
 from distutils.core import setup
 
 setup(
-    name = 'py-ryzom-api',
-    packages = ['py-ryzom-api'],
+    name = 'ryzomapi',
+    packages = ['ryzomapi'],
     version = '0.0.1',
     description = 'Unofficial python Ryzom API',
     author = 'Rodolphe Breard',
