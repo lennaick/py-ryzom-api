@@ -19,7 +19,8 @@ from ryzomapi.sas import get
 
 class Guild:
     def __init__(self, gid, name, race, icon, creation_date, description):
-        self.gid = int(gid)
+        self.id = int(gid)
+        self.gid = self.id
         self.name = str(name)
         self.race = str(race)
         self.icon = str(icon)
