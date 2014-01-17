@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<guilds>
+  <cache created="1389959644" expire="1389963244"/>
+  <shard>atys</shard>
+  <guild>
+    <gid>42</gid>
+    <name>Trololo</name>
+    <race>Matis</race>
+    <icon>544929668269603272</icon>
+    <creation_date>127486580</creation_date>
+    <description></description>
+  </guild>
+  <guild>
+    <gid>69</gid>
+    <name>Test</name>
+    <race>Matis</race>
+    <icon>576460747016504951</icon>
+    <creation_date>127239578</creation_date>
+    <description>Test guild</description>
+  </guild>
+  <guild>
+    <gid>21</gid>
+    <name>Test bis</name>
+    <race>Fyros</race>
+    <icon>227431849901687848</icon>
+    <creation_date>131270814</creation_date>
+    <description>Re-test</description>
+  </guild>
+</guilds>
