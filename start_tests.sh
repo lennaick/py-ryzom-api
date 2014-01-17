@@ -20,7 +20,10 @@ TEST_DIR="$(pwd)/tests"
 export PYTHONPATH="$PYTHONPATH:$(pwd)"
 
 cd "$TEST_DIR"
-
 for file in *.py; do
-    python -m unittest "$file"
+    for pyver in python3 python2 python; do
+	if hash $pyver 2>/dev/null; then
+	    $pyver "$file"
+	fi
+    done
 done
