@@ -16,6 +16,12 @@
 
 from . import RYZOM_API_BASE_URL
 from ryzomapi.sas import get
+try:
+    from urllib.parse import urlencode
+    from html import escape
+except ImportError:
+    from urllib import urlencode
+    from cgi import escape
 
 class Guild:
     def __init__(self, gid, name, race, icon, creation_date, description):
@@ -29,6 +35,13 @@ class Guild:
 
     def __str__(self):
         return self.name
+
+    def icon_link(self, size='b', escape_url=False):
+        params = urlencode({'size': size, 'icon': self.icon})
+        ret = '%s/guild_icon.php?%s' % (RYZOM_API_BASE_URL, params)
+        if escape_url:
+            ret = escape(ret)
+        return ret
 
 def list_all(from_file=None):
     lst = []

@@ -15,6 +15,7 @@
 ##
 
 from ryzomapi.guild import list_all
+from ryzomapi import RYZOM_API_BASE_URL
 import xml.etree
 import unittest
 
@@ -22,6 +23,11 @@ class GuildsTest(unittest.TestCase):
     def test_loading(self):
         lst = list_all(from_file='data/guild_1.xml')
         self.assertEqual(len(lst), 3)
+
+        self.assertIn(lst[0].icon_link(), ('%s/guild_icon.php?icon=544929668269603272&size=b' % RYZOM_API_BASE_URL,
+                                           '%s/guild_icon.php?size=b&icon=544929668269603272' % RYZOM_API_BASE_URL))
+        self.assertIn(lst[0].icon_link(escape_url=True), ('%s/guild_icon.php?icon=544929668269603272&amp;size=b' % RYZOM_API_BASE_URL,
+                                                          '%s/guild_icon.php?size=b&amp;icon=544929668269603272' % RYZOM_API_BASE_URL))
 
         lst = list_all(from_file='data/guild_2.xml')
         self.assertEqual(len(lst), 0)
