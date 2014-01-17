@@ -30,9 +30,9 @@ class Guild:
     def __str__(self):
         return self.name
 
-def list_all():
+def list_all(from_file=None):
     lst = []
-    data = get('guilds')
+    data = get('guilds', from_file=from_file)
     for node in data.findall('guild'):
         lst.append(Guild(node.find('gid').text,
                          node.find('name').text,

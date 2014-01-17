@@ -18,15 +18,20 @@ from . import RYZOM_API_DOMAIN
 from xml.etree.ElementTree import fromstring
 import urllib.parse, http.client
 
-def get(name, **kwargs):
-    url = '/%s.php' % name
-    params = urllib.parse.urlencode(kwargs)
+def get(name, from_file=None, **kwargs):
+    if from_file is None:
+        url = '/%s.php' % name
+        params = urllib.parse.urlencode(kwargs)
 
-    conn = http.client.HTTPConnection(RYZOM_API_DOMAIN)
-    conn.request('GET', url, params)
-    rep = conn.getresponse()
-    if rep.status != 200:
-        raise Exception
+        conn = http.client.HTTPConnection(RYZOM_API_DOMAIN)
+        conn.request('GET', url, params)
+        rep = conn.getresponse()
+        if rep.status != 200:
+            raise Exception
 
-    data = rep.read()
+        data = rep.read()
+    else:
+        with open(from_file, 'r') as f:
+            data = f.read()
+
     return fromstring(data)
