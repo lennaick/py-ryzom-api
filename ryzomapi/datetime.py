@@ -15,6 +15,8 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
+from ryzomapi.sas import get
+
 class RyzomDate:
     __ticks_per_hour = 1800
     __hours_per_day = 24
@@ -31,7 +33,9 @@ class RyzomDate:
                  'fr': {'ac': 'CA', 'num': ('er', 'nd', 'ème', 'ème')},
                  'de': {'ac': 'AZ', 'num': ('.', '.', '.', '.')}}
 
-    def __init__(self, tick):
+    def __init__(self, tick=None):
+        if tick is None:
+            tick = int(get('time', format='xml').find('server_tick').text)
         self.locale_name = 'en'
         self.tick = int(tick)
 
