@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ryzomapi>
+  <guild apikey="g7f48c2a3c6bd683520ede8b1cd6bf59e77b25f0d" created="1390156169" modules="G01:P01" cached_until="1390155400">
+    <gid>4242</gid>
+    <name>The Test Guild</name>
+    <description>To serve and debug</description>
+    <icon>110142619738866353</icon>
+    <shard>atys</shard>
+    <race>Matis</race>
+    <cult>karavan</cult>
+    <civilization>matis</civilization>
+    <creation_date>143032708</creation_date>
+    <building>181403709</building>
+    <fame>
+      <fyros>-600000</fyros>
+      <matis>600000</matis>
+      <tryker>450000</tryker>
+      <zorai>4200</zorai>
+      <kami>-500000</kami>
+      <karavan>600000</karavan>
+    </fame>
+  </guild>
+</ryzomapi>

@@ -14,13 +14,14 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
-from ryzomapi.guild import list_all
+from ryzomapi.exceptions import InvalidAPIKeyException
+from ryzomapi.guild import list_all, get_by_key
 from ryzomapi import RYZOM_API_BASE_URL
 import xml.etree
 import unittest
 
 class GuildsTest(unittest.TestCase):
-    def test_loading(self):
+    def test_all_loading(self):
         lst = list_all(from_file='data/guild_1.xml')
         self.assertEqual(len(lst), 3)
 
@@ -32,12 +33,26 @@ class GuildsTest(unittest.TestCase):
         lst = list_all(from_file='data/guild_2.xml')
         self.assertEqual(len(lst), 0)
 
-    def test_invalid_data(self):
+    def test_all_invalid_data(self):
         with self.assertRaises(xml.etree.ElementTree.ParseError):
             lst = list_all(from_file='data/invalid.xml')
 
         with self.assertRaises(xml.etree.ElementTree.ParseError):
             lst = list_all(from_file='data/empty.xml')
+
+    def test_guild_loading(self):
+        guild = get_by_key('g7f48c2a3c6bd683520ede8b1cd6bf59e77b25f0d', from_file='data/guild_3.xml')
+        self.assertEqual(guild.gid, 4242)
+        self.assertEqual(guild.id, 4242)
+        self.assertEqual(guild.name, 'The Test Guild')
+        self.assertEqual(guild.icon, '110142619738866353')
+
+    def test_guild_invalid_data(self):
+        with self.assertRaises(InvalidAPIKeyException):
+            get_by_key('')
+
+        with self.assertRaises(InvalidAPIKeyException):
+            get_by_key('invalid key')
 
 if __name__ == '__main__':
     unittest.main()

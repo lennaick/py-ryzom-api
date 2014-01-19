@@ -15,6 +15,8 @@
 ##
 
 from . import RYZOM_API_BASE_URL
+from ryzomapi.exceptions import InvalidAPIKeyException
+from ryzomapi.utils import api_key_is_valid
 from ryzomapi.sas import get
 try:
     from urllib.parse import urlencode
@@ -24,14 +26,15 @@ except ImportError:
     from cgi import escape
 
 class Guild:
-    def __init__(self, gid, name, race, icon, creation_date, description):
-        self.id = int(gid)
-        self.gid = self.id
-        self.name = str(name)
-        self.race = str(race)
-        self.icon = str(icon)
-        self.creation_date = str(creation_date)
-        self.description = str(description)
+    __allowed = ('gid', 'name', 'race', 'icon', 'description', 'creation_date')
+
+    def __init__(self, **kwargs):
+        for k in kwargs:
+            if k in self.__class__.__allowed:
+                setattr(self, k, kwargs[k])
+        if self.gid:
+            self.gid = int(self.gid)
+            self.id = self.gid
 
     def __str__(self):
         return self.name
@@ -47,10 +50,22 @@ def list_all(from_file=None):
     lst = []
     data = get('guilds', from_file=from_file)
     for node in data.findall('guild'):
-        lst.append(Guild(node.find('gid').text,
-                         node.find('name').text,
-                         node.find('race').text,
-                         node.find('icon').text,
-                         node.find('creation_date').text,
-                         node.find('description').text))
+        lst.append(Guild(gid = node.find('gid').text,
+                         name = node.find('name').text,
+                         race = node.find('race').text,
+                         icon = node.find('icon').text,
+                         creation_date = node.find('creation_date').text,
+                         description = node.find('description').text))
     return lst
+
+def get_by_key(api_key, from_file=None):
+    if not api_key_is_valid(api_key, 'g'):
+        raise InvalidAPIKeyException
+    data = get('guild', apikey=api_key, from_file=from_file)
+    node = data.find('guild')
+    return Guild(gid = node.find('gid').text,
+                 name = node.find('name').text,
+                 race = node.find('race').text,
+                 icon = node.find('icon').text,
+                 creation_date = node.find('creation_date').text,
+                 description = node.find('description').text)
