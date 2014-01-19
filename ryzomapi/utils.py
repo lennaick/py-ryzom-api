@@ -14,11 +14,18 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
+from . import api_key_pattern
 import re
 
-RYZOM_API_DOMAIN = 'api.ryzom.com'
-RYZOM_API_BASE_URL = 'http://%s' % RYZOM_API_DOMAIN
+def api_key_is_valid(api_key, key_type):
+    if not re.match(api_key_pattern, api_key):
+        return False
+    if api_key[0] != key_type:
+        return False
+    return True
 
-__all__ = ['guild']
+def character_api_key_is_valid(api_key):
+    return api_key_is_valid(api_key, 'c')
 
-api_key_pattern = re.compile('^(g|c)[a-f0-9]{40}$')
+def guild_api_key_is_valid(api_key):
+    return api_key_is_valid(api_key, 'g')
