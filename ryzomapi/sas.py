@@ -26,7 +26,7 @@ except ImportError:
 def do_request(url, params):
     params = urlencode(params)
     conn = HTTPConnection(RYZOM_API_DOMAIN)
-    conn.request('GET', url, params)
+    conn.request('GET', '%s?%s' % (url, params))
     rep = conn.getresponse()
     if rep.status != 200:
         raise Exception
