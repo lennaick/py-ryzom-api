@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*
 ##
 ## Copyright (c) 2014 Rodolphe Breard
 ## 
@@ -14,11 +15,19 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
-import re
+from ryzomapi.datetime import RyzomDate
+import unittest
 
-RYZOM_API_DOMAIN = 'api.ryzom.com'
-RYZOM_API_BASE_URL = 'http://%s' % RYZOM_API_DOMAIN
+class RyzomDateTimeTest(unittest.TestCase):
+    dates = {
+        (541327147, 'en', '17h - Dua, Frutor 20, 3rd AC 2576'),
+        (541327147, 'fr', '17h - Dua, Frutor 20, 3ème CA 2576'),
+        (541327147, 'de', '17h - Dua, Frutor 20, 3. AZ 2576'),
+    }
+    def test_date(self):
+        for tick, locale, result in self.dates:
+            d = RyzomDate(tick)
+            self.assertEqual(str(d.locale(locale)), result)
 
-__all__ = ['datetime', 'guild', 'utils']
-
-api_key_pattern = re.compile('^(g|c)[a-f0-9]{40}$')
+if __name__ == '__main__':
+    unittest.main()

@@ -17,6 +17,7 @@
 from . import RYZOM_API_BASE_URL
 from ryzomapi.exceptions import InvalidAPIKeyException
 from ryzomapi.utils import api_key_is_valid
+from ryzomapi.datetime import RyzomDate
 from ryzomapi.sas import get
 try:
     from urllib.parse import urlencode
@@ -24,14 +25,18 @@ try:
 except ImportError:
     from urllib import urlencode
     from cgi import escape
+import datetime
 
 class Guild:
-    __allowed = ('gid', 'name', 'race', 'icon', 'description', 'creation_date')
+    __allowed = ('gid', 'name', 'race', 'icon', 'description',
+                 'shard', 'motd', 'money')
 
     def __init__(self, **kwargs):
         for k in kwargs:
             if k in self.__class__.__allowed:
                 setattr(self, k, kwargs[k])
+        if kwargs['creation_date']:
+            self.creation_date = RyzomDate(kwargs['creation_date'])
         if self.gid:
             self.gid = int(self.gid)
             self.id = self.gid
