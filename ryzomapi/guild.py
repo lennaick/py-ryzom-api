@@ -28,21 +28,31 @@ except ImportError:
 import datetime
 
 class Guild:
-    __allowed = ('gid', 'name', 'race', 'icon', 'description',
+    __allowed = ('gid', 'name', 'race', 'icon', 'description', 'creation_date',
                  'shard', 'motd', 'money')
 
-    def __init__(self, **kwargs):
-        for k in kwargs:
-            if k in self.__class__.__allowed:
-                setattr(self, k, kwargs[k])
-        if kwargs['creation_date']:
-            self.creation_date = RyzomDate(kwargs['creation_date'])
-        if self.gid:
+    def __init__(self, api_key=None, from_file=None):
+        if api_key is not None or from_file is not None:
+            self.load(api_key, from_file)
+
+        if hasattr(self, 'creation_date'):
+            self.creation_date = RyzomDate(self.creation_date)
+        if hasattr(self, 'gid'):
             self.gid = int(self.gid)
             self.id = self.gid
 
     def __str__(self):
         return self.name
+
+    def load(self, api_key, from_file):
+        if from_file is None and not api_key_is_valid(api_key, 'g'):
+            raise InvalidAPIKeyException
+        data = get('guild', apikey=api_key, from_file=from_file)
+        node = data.find('guild')
+        for attr_name in self.__allowed:
+            dt = node.find(attr_name)
+            if dt is not None:
+                setattr(self, attr_name, dt.text)
 
     def icon_link(self, size='b', escape_url=False):
         params = urlencode({'size': size, 'icon': self.icon})
@@ -55,22 +65,8 @@ def list_all(from_file=None):
     lst = []
     data = get('guilds', from_file=from_file)
     for node in data.findall('guild'):
-        lst.append(Guild(gid = node.find('gid').text,
-                         name = node.find('name').text,
-                         race = node.find('race').text,
-                         icon = node.find('icon').text,
-                         creation_date = node.find('creation_date').text,
-                         description = node.find('description').text))
+        guild = Guild()
+        for attr_name in ('gid', 'name', 'race', 'icon', 'creation_date', 'description'):
+            setattr(guild, attr_name, node.find(attr_name).text)
+        lst.append(guild)
     return lst
-
-def get_by_key(api_key, from_file=None):
-    if not api_key_is_valid(api_key, 'g'):
-        raise InvalidAPIKeyException
-    data = get('guild', apikey=api_key, from_file=from_file)
-    node = data.find('guild')
-    return Guild(gid = node.find('gid').text,
-                 name = node.find('name').text,
-                 race = node.find('race').text,
-                 icon = node.find('icon').text,
-                 creation_date = node.find('creation_date').text,
-                 description = node.find('description').text)
