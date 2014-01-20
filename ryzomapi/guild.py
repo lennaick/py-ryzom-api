@@ -16,7 +16,7 @@
 
 from . import RYZOM_API_BASE_URL
 from ryzomapi.exceptions import InvalidAPIKeyException
-from ryzomapi.utils import api_key_is_valid
+from ryzomapi.apikey import api_key_is_valid
 from ryzomapi.datetime import RyzomDate
 from ryzomapi.fame import Fame
 from ryzomapi.sas import get

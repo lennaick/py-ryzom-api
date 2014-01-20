@@ -14,7 +14,7 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
-from ryzomapi.utils import *
+from ryzomapi.apikey import *
 import unittest
 
 class APIKeyTest(unittest.TestCase):
