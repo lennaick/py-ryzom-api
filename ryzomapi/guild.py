@@ -28,6 +28,14 @@ except ImportError:
     from cgi import escape
 import datetime
 
+class Member:
+    def __init__(self, name, grade=None, joined=None):
+        self.name = name
+        if grade is not None:
+            self.grade = grade
+        if joined is not None:
+            self.joined = joined
+
 class Guild:
     __allowed = ('gid', 'name', 'race', 'icon', 'description', 'creation_date',
                  'shard', 'motd', 'money')
@@ -57,6 +65,13 @@ class Guild:
         fame = node.find('fame')
         if fame is not None:
             setattr(self, 'fame', Fame(fame))
+        members = node.find('members')
+        if members is not None:
+            setattr(self, 'members', [])
+            for m in members.findall('member'):
+                self.members.append(Member(m.find('name').text,
+                                           m.find('grade').text,
+                                           m.find('joined').text))
 
     def icon_link(self, size='b', escape_url=False):
         params = urlencode({'size': size, 'icon': self.icon})
