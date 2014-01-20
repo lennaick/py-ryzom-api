@@ -19,6 +19,6 @@ import re
 RYZOM_API_DOMAIN = 'api.ryzom.com'
 RYZOM_API_BASE_URL = 'http://%s' % RYZOM_API_DOMAIN
 
-__all__ = ['datetime', 'guild', 'utils']
+__all__ = ['apikey', 'datetime', 'fame', 'guild']
 
 api_key_pattern = re.compile('^(g|c)[a-f0-9]{40}$')
