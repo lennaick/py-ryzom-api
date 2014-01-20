@@ -23,6 +23,9 @@ class Fame:
     def __init__(self, it):
         for f in it:
             if f.tag in self.faction:
-                self.faction[f.tag] = int(f.text)
+                self.faction[f.tag] = self.clamp(f.text)
             if f.tag in self.nation:
-                self.nation[f.tag] = int(f.text)
+                self.nation[f.tag] = self.clamp(f.text)
+
+    def clamp(self, value):
+        return sorted((self.__min, int(value), self.__max))[1]
