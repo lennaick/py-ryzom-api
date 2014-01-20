@@ -17,8 +17,8 @@
 from . import RYZOM_API_BASE_URL
 from ryzomapi.exceptions import InvalidAPIKeyException
 from ryzomapi.apikey import api_key_is_valid
+from ryzomapi.fame import Fame, Allegiance
 from ryzomapi.datetime import RyzomDate
-from ryzomapi.fame import Fame
 from ryzomapi.sas import get
 try:
     from urllib.parse import urlencode
@@ -58,13 +58,20 @@ class Guild:
             raise InvalidAPIKeyException
         data = get('guild', apikey=api_key, from_file=from_file)
         node = data.find('guild')
+
         for attr_name in self.__allowed:
             dt = node.find(attr_name)
             if dt is not None:
                 setattr(self, attr_name, dt.text)
+
         fame = node.find('fame')
         if fame is not None:
             setattr(self, 'fame', Fame(fame))
+
+        faction = node.find('cult').text if node.find('cult') is not None else None
+        nation = node.find('civilization').text if node.find('civilization') is not None else None
+        self.allegiance = Allegiance(faction, nation)
+
         members = node.find('members')
         if members is not None:
             setattr(self, 'members', [])

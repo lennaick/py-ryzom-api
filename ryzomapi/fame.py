@@ -29,3 +29,13 @@ class Fame:
 
     def clamp(self, value):
         return sorted((self.__min, int(value), self.__max))[1]
+
+class Allegiance:
+    faction = None
+    nation = None
+
+    def __init__(self, faction=None, nation=None):
+        if faction in Fame.faction:
+            self.faction = faction
+        if nation in Fame.nation:
+            self.nation = nation
