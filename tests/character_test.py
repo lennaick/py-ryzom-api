@@ -14,6 +14,9 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
+import sys
+sys.path.insert(0, '.')
+
 from ryzomapi.exceptions import InvalidAPIKeyException
 from ryzomapi.character import Character
 import unittest
