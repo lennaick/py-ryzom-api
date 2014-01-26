@@ -13,7 +13,7 @@ from distutils.core import setup
 setup(
     name = 'ryzomapi',
     packages = ['ryzomapi'],
-    version = '0.0.1',
+    version = '0.1.0',
     description = 'Unofficial python Ryzom API',
     author = 'Rodolphe Breard',
     author_email = 'rodolphe@what.tf',
