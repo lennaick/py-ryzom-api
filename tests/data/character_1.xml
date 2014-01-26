@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<ryzomapi>
+  <character apikey="c7dee114965fce8dadae6c06b4dc195f5f2b53f09" created="1390743810" modules="C01:A01:P01" cached_until="1390744110">
+    <id>4269</id>
+    <name>Debughomin</name>
+    <shard>Atys</shard>
+    <race>Matis</race>
+    <gender>m</gender>
+    <titleid>#Dat title</titleid>
+    <cult>Karavan</cult>
+    <civilization>Matis</civilization>
+    <played lastlogin="1390646867" lastlogout="1390696669">25404804</played>
+    <body>
+      <hairtype>87</hairtype>
+      <haircolor>5</haircolor>
+      <tattoo>24</tattoo>
+      <eyescolor>0</eyescolor>
+      <gabarit height="10" torso="6" arms="8" legs="9" breast="7"/>
+      <morph target1="5" target2="6" target3="3" target4="3" target5="3" target6="1" target7="4" target8="3"/>
+    </body>
+    <guild>
+      <gid>4242</gid>
+      <name>The Test Guild</name>
+      <icon>110142619738866353</icon>
+      <grade>HighOfficer</grade>
+    </guild>
+    <equipment>
+      <arms slot="47" quality="250" color="3">icfals_3.sitem</arms>
+      <handr slot="53" quality="250" color="0">icmm2ms_3.sitem</handr>
+      <legs slot="54" quality="250" color="3">icmacp_3.sitem</legs>
+      <ankler slot="58" quality="250" color="6">icfja_3.sitem</ankler>
+      <chest slot="66" quality="250" color="3">icmalv_3.sitem</chest>
+      <hands slot="67" quality="250" color="3">icmalg_3.sitem</hands>
+      <anklel slot="69" quality="250" color="6">icfja_3.sitem</anklel>
+      <feet slot="70" quality="250" color="3">icmalb_3.sitem</feet>
+      <wristr slot="75" quality="250" color="6">icfjb_3.sitem</wristr>
+      <wristl slot="76" quality="250" color="6">icfjb_3.sitem</wristl>
+      <headdress slot="80" quality="223" color="6">icfjd_3.sitem</headdress>
+      <earl slot="81" quality="250" color="6">icfje_3.sitem</earl>
+      <earr slot="89" quality="250" color="6">icfje_3.sitem</earr>
+      <necklace slot="90" quality="250" color="6">icfjp_3.sitem</necklace>
+      <fingerl slot="91" quality="250" color="6">icfjr_3.sitem</fingerl>
+      <fingerr slot="92" quality="250" color="6">icfjr_3.sitem</fingerr>
+    </equipment>
+    <building>234881479</building>
+    <pets>
+      <animal index="0">
+	<sheet>chifb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>520.34351</satiety>
+      </animal>
+      <animal index="1">
+	<sheet>chjfb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>582.30866</satiety>
+      </animal>
+      <animal index="2">
+	<sheet>chjfb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>785.57556</satiety>
+      </animal>
+      <animal index="3">
+	<sheet>chjfb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>788.03888</satiety>
+      </animal>
+    </pets>
+    <fame>
+      <fyros>-600000</fyros>
+      <kami>-600000</kami>
+      <karavan>600000</karavan>
+      <matis>600000</matis>
+      <tribe_ancient_dryads>-600000</tribe_ancient_dryads>
+      <tribe_antikamis>99545</tribe_antikamis>
+      <tribe_company_of_the_eternal_tree>-300000</tribe_company_of_the_eternal_tree>
+      <tribe_corsair>-189334</tribe_corsair>
+      <tribe_darkening_sap>307241</tribe_darkening_sap>
+      <tribe_ecowarriors>-300000</tribe_ecowarriors>
+      <tribe_first_deserter>-417874</tribe_first_deserter>
+      <tribe_frahar_hunters>167814</tribe_frahar_hunters>
+      <tribe_goo_heads>99545</tribe_goo_heads>
+      <tribe_green_seed>315089</tribe_green_seed>
+      <tribe_icon_workshipers>400388</tribe_icon_workshipers>
+      <tribe_lagoon_brothers>-402760</tribe_lagoon_brothers>
+      <tribe_lawless>-401752</tribe_lawless>
+      <tribe_leviers>-95747</tribe_leviers>
+      <tribe_master_of_the_goo>-540</tribe_master_of_the_goo>
+      <tribe_oasis_diggers>9924</tribe_oasis_diggers>
+      <tribe_pyromancers>9924</tribe_pyromancers>
+      <tribe_renegades>294735</tribe_renegades>
+      <tribe_restorers>-294735</tribe_restorers>
+      <tribe_root_tappers>111506</tribe_root_tappers>
+      <tribe_sacred_sap>-312854</tribe_sacred_sap>
+      <tribe_sap_slaves>315598</tribe_sap_slaves>
+      <tribe_scorchers>-403531</tribe_scorchers>
+      <tribe_shadow_runners>-297975</tribe_shadow_runners>
+      <tribe_siblings_of_the_weeds>-99545</tribe_siblings_of_the_weeds>
+      <tribe_silt_sculptors>210416</tribe_silt_sculptors>
+      <tribe_slavers>295979</tribe_slavers>
+      <tribe_the_arid_matis>318533</tribe_the_arid_matis>
+      <tribe_the_kuilde>307376</tribe_the_kuilde>
+      <tribe_the_slash_and_burn>-417874</tribe_the_slash_and_burn>
+      <tribe_tutors>-399805</tribe_tutors>
+      <tribe_water_breakers>127599</tribe_water_breakers>
+      <tribe_woven_bridles>-509836</tribe_woven_bridles>
+      <tryker>42042</tryker>
+      <zorai>0</zorai>
+    </fame>
+  </character>
+</ryzomapi>

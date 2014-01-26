@@ -14,11 +14,24 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
-import re
+from ryzomapi.exceptions import InvalidAPIKeyException
+from ryzomapi.character import Character
+import unittest
 
-RYZOM_API_DOMAIN = 'api.ryzom.com'
-RYZOM_API_BASE_URL = 'http://%s' % RYZOM_API_DOMAIN
+class CharacterTest(unittest.TestCase):
+    def test_character_loading(self):
+        character = Character(from_file='data/character_1.xml')
+        self.assertEqual(character.id, 4269)
+        self.assertEqual(character.name, 'Debughomin')
+        self.assertEqual(character.allegiance.nation, 'matis')
+        self.assertEqual(character.allegiance.faction, 'karavan')
 
-__all__ = ['apikey', 'character', 'datetime', 'fame', 'guild']
+    def test_character_invalid_data(self):
+        with self.assertRaises(InvalidAPIKeyException):
+            Character('')
 
-api_key_pattern = re.compile('^(g|c)[a-f0-9]{40}$')
+        with self.assertRaises(InvalidAPIKeyException):
+            Character('invalid key')
+
+if __name__ == '__main__':
+    unittest.main()
