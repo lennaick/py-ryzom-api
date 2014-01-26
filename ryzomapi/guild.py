@@ -14,12 +14,12 @@
 ## OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ##
 
+from . import datetime as ryzom_datetime
 from . import RYZOM_API_BASE_URL
-from ryzomapi.exceptions import InvalidAPIKeyException
-from ryzomapi.apikey import api_key_is_valid
-from ryzomapi.fame import Fame, Allegiance
-from ryzomapi.datetime import RyzomDate
-from ryzomapi.sas import get
+from . import exceptions
+from . import apikey
+from . import fame
+from . import sas
 try:
     from urllib.parse import urlencode
     from html import escape
@@ -45,7 +45,7 @@ class Guild:
             self.load(api_key, from_file)
 
         if hasattr(self, 'creation_date'):
-            self.creation_date = RyzomDate(self.creation_date)
+            self.creation_date = ryzom_datetime.RyzomDate(self.creation_date)
         if hasattr(self, 'gid'):
             self.gid = int(self.gid)
             self.id = self.gid
@@ -54,9 +54,9 @@ class Guild:
         return self.name
 
     def load(self, api_key, from_file):
-        if from_file is None and not api_key_is_valid(api_key, 'g'):
-            raise InvalidAPIKeyException
-        data = get('guild', apikey=api_key, from_file=from_file)
+        if from_file is None and not apikey.api_key_is_valid(api_key, 'g'):
+            raise exceptions.InvalidAPIKeyException
+        data = sas.get('guild', apikey=api_key, from_file=from_file)
         node = data.find('guild')
 
         for attr_name in self.__allowed:
@@ -64,13 +64,13 @@ class Guild:
             if dt is not None:
                 setattr(self, attr_name, dt.text)
 
-        fame = node.find('fame')
-        if fame is not None:
-            setattr(self, 'fame', Fame(fame))
+        f = node.find('fame')
+        if f is not None:
+            setattr(self, 'fame', fame.Fame(f))
 
         faction = node.find('cult').text if node.find('cult') is not None else None
         nation = node.find('civilization').text if node.find('civilization') is not None else None
-        self.allegiance = Allegiance(faction, nation)
+        self.allegiance = fame.Allegiance(faction, nation)
 
         members = node.find('members')
         if members is not None:
@@ -89,7 +89,7 @@ class Guild:
 
 def list_all(from_file=None):
     lst = []
-    data = get('guilds', from_file=from_file)
+    data = sas.get('guilds', from_file=from_file)
     for node in data.findall('guild'):
         guild = Guild()
         for attr_name in ('gid', 'name', 'race', 'icon', 'creation_date', 'description'):
