@@ -52,4 +52,3 @@ class Character:
         faction = node.find('cult').text if node.find('cult') is not None else None
         nation = node.find('civilization').text if node.find('civilization') is not None else None
         self.allegiance = Allegiance(faction, nation)
-        print(self.allegiance.faction)
