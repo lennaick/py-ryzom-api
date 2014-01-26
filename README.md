@@ -5,4 +5,4 @@ This software is intended to provide python bindings to the [Ryzom API](http://d
 
 [![Build status](https://api.travis-ci.org/TychoBrahe/py-ryzom-api.png)](https://travis-ci.org/TychoBrahe/py-ryzom-api)
 
-Documentation is available at [http://python-ryzom-api.rtfd.org/](http://python-ryzom-api.rtfd.org/).
+Documentation is available at [python-ryzom-api.readthedocs.org](https://python-ryzom-api.readthedocs.org).
