@@ -20,7 +20,7 @@ import unittest
 
 class CharacterTest(unittest.TestCase):
     def test_character_loading(self):
-        character = Character(from_file='data/character_1.xml')
+        character = Character(from_file='tests/data/character_1.xml')
         self.assertEqual(character.id, 4269)
         self.assertEqual(character.name, 'Debughomin')
         self.assertEqual(character.allegiance.nation, 'matis')

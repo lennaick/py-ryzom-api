@@ -22,7 +22,7 @@ import unittest
 
 class GuildsTest(unittest.TestCase):
     def test_all_loading(self):
-        lst = list_all(from_file='data/guild_1.xml')
+        lst = list_all(from_file='tests/data/guild_1.xml')
         self.assertEqual(len(lst), 3)
 
         self.assertIn(lst[0].icon_link(), ('%s/guild_icon.php?icon=544929668269603272&size=b' % RYZOM_API_BASE_URL,
@@ -30,18 +30,18 @@ class GuildsTest(unittest.TestCase):
         self.assertIn(lst[0].icon_link(escape_url=True), ('%s/guild_icon.php?icon=544929668269603272&amp;size=b' % RYZOM_API_BASE_URL,
                                                           '%s/guild_icon.php?size=b&amp;icon=544929668269603272' % RYZOM_API_BASE_URL))
 
-        lst = list_all(from_file='data/guild_2.xml')
+        lst = list_all(from_file='tests/data/guild_2.xml')
         self.assertEqual(len(lst), 0)
 
     def test_all_invalid_data(self):
         with self.assertRaises(xml.etree.ElementTree.ParseError):
-            lst = list_all(from_file='data/invalid.xml')
+            lst = list_all(from_file='tests/data/invalid.xml')
 
         with self.assertRaises(xml.etree.ElementTree.ParseError):
-            lst = list_all(from_file='data/empty.xml')
+            lst = list_all(from_file='tests/data/empty.xml')
 
     def test_guild_loading(self):
-        guild = Guild(from_file='data/guild_3.xml')
+        guild = Guild(from_file='tests/data/guild_3.xml')
         self.assertEqual(guild.gid, 4242)
         self.assertEqual(guild.id, 4242)
         self.assertEqual(guild.name, 'The Test Guild')
