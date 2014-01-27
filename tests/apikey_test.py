@@ -17,7 +17,8 @@
 import sys
 sys.path.insert(0, '.')
 
-from ryzomapi.apikey import *
+from ryzomapi.exceptions import InvalidAPIKeyException
+from ryzomapi import APIKey
 import unittest
 
 class APIKeyTest(unittest.TestCase):
@@ -42,16 +43,20 @@ class APIKeyTest(unittest.TestCase):
 
     def test_guild_valid(self):
         for key in self.guild_keys:
-            self.assertEqual(guild_api_key_is_valid(key), True, key)
+            k = APIKey(key)
+            self.assertEqual(k.checkType('guild'), True, key)
 
     def test_character_valid(self):
         for key in self.character_keys:
-            self.assertEqual(character_api_key_is_valid(key), True, key)
+            k = APIKey(key)
+            self.assertEqual(k.checkType('character'), True, key)
 
     def test_character_invalid(self):
         for key in self.invalid_keys:
-            self.assertEqual(guild_api_key_is_valid(key), False, key)
-            self.assertEqual(character_api_key_is_valid(key), False, key)
+            with self.assertRaises(InvalidAPIKeyException):
+                APIKey(key, 'guild')
+            with self.assertRaises(InvalidAPIKeyException):
+                APIKey(key, 'character')
 
 if __name__ == '__main__':
     unittest.main()

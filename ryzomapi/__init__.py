@@ -33,7 +33,6 @@ api_key_pattern = re.compile('^(g|c)[a-f0-9]{40}$')
 
 from . import exceptions
 from . import datetime
-from . import apikey
 from . import fame
 from . import sas
 
@@ -43,6 +42,23 @@ try:
 except ImportError:
     from urllib import urlencode
     from cgi import escape
+
+
+class APIKey:
+    def __init__(self, api_key, key_type=None):
+        self.key = str(api_key)
+
+        if not re.match(api_key_pattern, self.key):
+            raise exceptions.InvalidAPIKeyException
+
+        if key_type is not None and not self.checkType(key_type):
+            raise exceptions.InvalidAPIKeyException
+
+    def __str__(self):
+        return self.key
+
+    def checkType(self, key_type):
+        return self.key[0] == key_type.lower()[0]
 
 
 class Character:
@@ -59,8 +75,8 @@ class Character:
         return self.name
 
     def load(self, api_key, from_file):
-        if from_file is None and not apikey.api_key_is_valid(api_key, 'c'):
-            raise exceptions.InvalidAPIKeyException
+        if from_file is None:
+            api_key = APIKey(api_key, 'character')
         data = sas.get('character', apikey=api_key, from_file=from_file)
         node = data.find('character')
 
@@ -105,8 +121,8 @@ class Guild:
         return self.name
 
     def load(self, api_key, from_file):
-        if from_file is None and not apikey.api_key_is_valid(api_key, 'g'):
-            raise exceptions.InvalidAPIKeyException
+        if from_file is None:
+            api_key = APIKey(api_key, 'guild')
         data = sas.get('guild', apikey=api_key, from_file=from_file)
         node = data.find('guild')
 
