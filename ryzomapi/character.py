@@ -26,8 +26,6 @@ class Character:
         if api_key is not None or from_file is not None:
             self.load(api_key, from_file)
 
-        if hasattr(self, 'creation_date'):
-            self.creation_date = RyzomDate(self.creation_date)
         if hasattr(self, 'id'):
             self.id = int(self.id)
 
