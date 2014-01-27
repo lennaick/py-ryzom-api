@@ -18,7 +18,7 @@ import sys
 sys.path.insert(0, '.')
 
 from ryzomapi.exceptions import InvalidAPIKeyException
-from ryzomapi.character import Character
+from ryzomapi import Character
 import unittest
 
 class CharacterTest(unittest.TestCase):

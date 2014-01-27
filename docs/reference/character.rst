@@ -1,7 +1,7 @@
-The Character class
-===================
+Character
+=========
 
-.. py:class:: ryzomapi.character.Character(api_key=None, from_file=None)
+.. py:class:: ryzomapi.Character(api_key=None, from_file=None)
 
    :param api_key: the character's api key
    :type api_key: str
@@ -51,7 +51,7 @@ Displaying basic informations:
 
 .. code-block:: python
 
-   from ryzomapi.character import Character
+   from ryzomapi import Character
 
    c = Character('cf2a0ac0a6024b0b42c62149609500eab317ffb75')
    print(c.name)
