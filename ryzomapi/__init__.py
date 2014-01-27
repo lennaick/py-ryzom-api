@@ -116,6 +116,8 @@ class Guild:
         if hasattr(self, 'gid'):
             self.gid = int(self.gid)
             self.id = self.gid
+        if hasattr(self, 'money'):
+            self.money = int(self.money)
 
     def __str__(self):
         return self.name
