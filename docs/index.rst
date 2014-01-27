@@ -11,7 +11,14 @@ This software provides python bindings to the `Ryzom API <http://dev.ryzom.com/p
 .. image:: https://api.travis-ci.org/TychoBrahe/py-ryzom-api.png
    :target: https://travis-ci.org/TychoBrahe/py-ryzom-api
 
-Reference:
+
+Disclaimer
+----------
+This software is not supported by the Ryzom team and is not affiliated with the Winch Gate company.
+
+
+Reference
+=========
 
 .. toctree::
    :glob:
@@ -20,13 +27,7 @@ Reference:
    reference/*
 
 
-
 Indices and tables
 ==================
 
 * :ref:`genindex`
-
-
-Disclaimer
-----------
-This software is not supported by the Ryzom team and is not affiliated with the Winch Gate company.
