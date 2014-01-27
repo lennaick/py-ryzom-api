@@ -18,7 +18,7 @@
 import sys
 sys.path.insert(0, '.')
 
-from ryzomapi.datetime import RyzomDate
+from ryzomapi import RyzomDate
 import unittest
 
 class RyzomDateTimeTest(unittest.TestCase):
