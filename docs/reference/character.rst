@@ -1,5 +1,5 @@
-Character
-=========
+The Character class
+===================
 
 .. py:class:: ryzomapi.character.Character(api_key=None, from_file=None)
 
@@ -10,6 +10,10 @@ Character
 
    .. note::
       The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
+
+
+Attributes
+----------
 
    .. py:attribute:: id
 
@@ -31,6 +35,14 @@ Character
 
       (string) The character's gender.
 
+   .. py:attribute:: fame
+
+      (ryzomapi.fame.Fame) The character's fames.
+
+   .. py:attribute:: allegiance
+
+      (ryzomapi.fame.Allegiance) The character's allegiances.
+
 
 Examples
 --------
@@ -43,6 +55,7 @@ Displaying basic informations:
 
    c = Character('cf2a0ac0a6024b0b42c62149609500eab317ffb75')
    print(c.name)
+   print(c.allegiance.nation)
    if c.race:
        print("My name is %(name)s and I'm a %(race)s." % c.__dict__)
 

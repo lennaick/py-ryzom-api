@@ -49,4 +49,4 @@ class Character:
 
         faction = node.find('cult').text if node.find('cult') is not None else None
         nation = node.find('civilization').text if node.find('civilization') is not None else None
-        self.allegiance = fame.Allegiance(faction, nation)
+        setattr(self, 'allegiance', fame.Allegiance(faction, nation))
