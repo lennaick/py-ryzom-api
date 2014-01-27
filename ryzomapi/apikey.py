@@ -18,6 +18,14 @@ from . import api_key_pattern
 import re
 
 def api_key_is_valid(api_key, key_type):
+    """Check whether an API Key is valid or not.
+
+    :param api_key: the api key to check
+    :type api_key: str
+    :param key_type: the api key type ('g' for guild, 'c' for character)
+    :type key_type: str
+    :returns: bool
+    """
     if not re.match(api_key_pattern, api_key):
         return False
     if api_key[0] != key_type:
@@ -25,7 +33,9 @@ def api_key_is_valid(api_key, key_type):
     return True
 
 def character_api_key_is_valid(api_key):
+    """Check whether a character API Key is valid or not."""
     return api_key_is_valid(api_key, 'c')
 
 def guild_api_key_is_valid(api_key):
+    """Check whether a guild API Key is valid or not."""
     return api_key_is_valid(api_key, 'g')

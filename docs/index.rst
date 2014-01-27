@@ -13,7 +13,9 @@ This software provides python bindings to the `Ryzom API <http://dev.ryzom.com/p
 
 
 .. toctree::
-   :maxdepth: 2
+   :glob:
+
+   reference/*
 
 
 
