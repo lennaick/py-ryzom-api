@@ -15,31 +15,31 @@ Character
 Attributes
 ----------
 
-   .. py:attribute:: id
+   .. py:attribute:: ryzomapi.Character.id
 
       (int) The character's id.
 
-   .. py:attribute:: name
+   .. py:attribute:: ryzomapi.Character.name
 
       (string) The character's name.
 
-   .. py:attribute:: shard
+   .. py:attribute:: ryzomapi.Character.shard
 
       (string) The shard's name.
 
-   .. py:attribute:: race
+   .. py:attribute:: ryzomapi.Character.race
 
       (string) The character's race.
 
-   .. py:attribute:: gender
+   .. py:attribute:: ryzomapi.Character.gender
 
       (string) The character's gender.
 
-   .. py:attribute:: fame
+   .. py:attribute:: ryzomapi.Character.fame
 
       (ryzomapi.fame.Fame) The character's fames.
 
-   .. py:attribute:: allegiance
+   .. py:attribute:: ryzomapi.Character.allegiance
 
       (ryzomapi.fame.Allegiance) The character's allegiances.
 

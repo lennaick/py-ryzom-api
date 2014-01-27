@@ -8,10 +8,10 @@ APIKey
    :param key_type: the api key type
    :type key_type: str
 
-Attributes
-----------
+Methods
+-------
 
-   .. py:method:: checkType(key_type)
+   .. py:method:: ryzomapi.APIKey.checkType(key_type)
 
       :param key_type: the type the api key will be checked against
       :type key_type: str
