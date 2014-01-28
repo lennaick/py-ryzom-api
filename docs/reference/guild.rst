@@ -59,11 +59,19 @@ Attributes
 Methods
 -------
 
+   .. py:method:: ryzomapi.Guild.icon_link(size='b', escape_url=False)
+
+      :param size: icon's size ('s' for small, 'b' for big)
+      :type size: str
+      :param escape_url: Whether the returned url should be escaped or not
+      :type escape_url: bool
+      :return: link to the guild's icon
+
    .. py:staticmethod:: ryzomapi.Guild.list_all(from_file=None)
 
-   :param from_file: xml file name containing the guild's data
-   :type from_file: str
-   :return: the list of every existing guilds
+      :param from_file: xml file name containing the guild's data
+      :type from_file: str
+      :return: the list of every existing guilds
 
-   .. note::
-      The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
+      .. note::
+         The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
