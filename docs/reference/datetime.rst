@@ -1,3 +1,5 @@
+.. _ryzomdate-label:
+
 RyzomDate
 =========
 

@@ -1,3 +1,5 @@
+.. _guild-label:
+
 Guild
 =====
 
@@ -17,7 +19,7 @@ Attributes
 
    .. py:attribute:: ryzomapi.Guild.id
 
-      (int) The guild's id.
+      (int) the guild's id.
 
    .. py:attribute:: ryzomapi.Guild.gid
 
@@ -25,11 +27,11 @@ Attributes
 
    .. py:attribute:: ryzomapi.Guild.name
 
-      (str) The guild's name.
+      (str) the guild's name.
 
    .. py:attribute:: ryzomapi.Guild.race
 
-      (str) The guild's race
+      (str) the guild's race
 
    .. py:attribute:: ryzomapi.Guild.icon
 
@@ -37,19 +39,19 @@ Attributes
 
    .. py:attribute:: ryzomapi.Guild.description
 
-      (str) The guild's description
+      (str) the guild's description
 
    .. py:attribute:: ryzomapi.Guild.creation_date
 
-      (ryzomapi.datetime.RyzomDate) The guild's creation date
+      (:ref:`ryzomdate-label`) the guild's creation date
 
    .. py:attribute:: ryzomapi.Guild.shard
 
-      (str) The guild's shard
+      (str) the guild's shard
 
    .. py:attribute:: ryzomapi.Guild.motd
 
-      (str) The guild's message of the day
+      (str) the guild's message of the day
 
    .. py:attribute:: ryzomapi.Guild.money
 
@@ -63,7 +65,7 @@ Methods
 
       :param size: icon's size ('s' for small, 'b' for big)
       :type size: str
-      :param escape_url: Whether the returned url should be escaped or not
+      :param escape_url: whether the returned url should be escaped or not
       :type escape_url: bool
       :return: link to the guild's icon
 
