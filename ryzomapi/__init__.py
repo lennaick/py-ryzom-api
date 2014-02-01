@@ -105,6 +105,29 @@ class APIKey:
         return self.key[0] == key_type.lower()[0]
 
 
+class Item:
+    __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed'}
+
+    def __init__(self, sheetid=None, xml=None):
+        self.sheetid = self.filter_sheetid(sheetid)
+
+    @staticmethod
+    def filter_sheetid(sheetid):
+        if sheetid is not None and sheetid[-6:] == '.sitem':
+            sheetid = sheetid[:-6]
+        return sheetid
+
+    def icon_url(self, escape_url=False):
+        params = {}
+        for attr_name, url_name in self.__url_attrs.items():
+            if hasattr(self, attr_name):
+                params[url_name] = getattr(self, attr_name)
+        ret = '%s/item_icon.php?%s' % (RYZOM_API_BASE_URL, urlencode(params))
+        if escape_url:
+            ret = escape(ret)
+        return ret
+
+
 class Character:
     __allowed = ('id', 'name', 'shard', 'race', 'gender')
 
@@ -190,7 +213,7 @@ class Guild:
                 member.joined = RyzomDate(m.find('joined').text)
                 self.members.append(member)
 
-    def icon_link(self, size='b', escape_url=False):
+    def icon_url(self, size='b', escape_url=False):
         params = urlencode({'size': size, 'icon': self.icon})
         ret = '%s/guild_icon.php?%s' % (RYZOM_API_BASE_URL, params)
         if escape_url:

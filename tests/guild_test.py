@@ -27,10 +27,10 @@ class GuildsTest(unittest.TestCase):
         lst = Guild.list_all(from_file='tests/data/guild_1.xml')
         self.assertEqual(len(lst), 3)
 
-        self.assertIn(lst[0].icon_link(), ('%s/guild_icon.php?icon=544929668269603272&size=b' % RYZOM_API_BASE_URL,
-                                           '%s/guild_icon.php?size=b&icon=544929668269603272' % RYZOM_API_BASE_URL))
-        self.assertIn(lst[0].icon_link(escape_url=True), ('%s/guild_icon.php?icon=544929668269603272&amp;size=b' % RYZOM_API_BASE_URL,
-                                                          '%s/guild_icon.php?size=b&amp;icon=544929668269603272' % RYZOM_API_BASE_URL))
+        self.assertIn(lst[0].icon_url(), ('%s/guild_icon.php?icon=544929668269603272&size=b' % RYZOM_API_BASE_URL,
+                                          '%s/guild_icon.php?size=b&icon=544929668269603272' % RYZOM_API_BASE_URL))
+        self.assertIn(lst[0].icon_url(escape_url=True), ('%s/guild_icon.php?icon=544929668269603272&amp;size=b' % RYZOM_API_BASE_URL,
+                                                         '%s/guild_icon.php?size=b&amp;icon=544929668269603272' % RYZOM_API_BASE_URL))
 
         lst = Guild.list_all(from_file='tests/data/guild_2.xml')
         self.assertEqual(len(lst), 0)

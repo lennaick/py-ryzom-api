@@ -57,13 +57,13 @@ Guild
 
       (list) list of :ref:`GuildMember <guildmember>`
 
-   .. py:method:: ryzomapi.Guild.icon_link(size='b', escape_url=False)
+   .. py:method:: ryzomapi.Guild.icon_url(size='b', escape_url=False)
 
       :param size: icon's size ('s' for small, 'b' for big)
       :type size: str
       :param escape_url: whether the returned url should be escaped or not
       :type escape_url: bool
-      :return: link to the guild's icon
+      :return: the guild's icon url
 
    .. py:staticmethod:: ryzomapi.Guild.list_all(from_file=None)
 
