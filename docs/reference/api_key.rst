@@ -7,9 +7,7 @@ APIKey
    :type api_key: str
    :param key_type: the api key type
    :type key_type: str
-
-Methods
--------
+   :raises: ryzomapi.exceptions.InvalidAPIKeyException
 
    .. py:method:: ryzomapi.APIKey.checkType(key_type)
 

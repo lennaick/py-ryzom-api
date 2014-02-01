@@ -13,10 +13,6 @@ Character
    .. note::
       The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
 
-
-Attributes
-----------
-
    .. py:attribute:: ryzomapi.Character.id
 
       (int) The character's id.

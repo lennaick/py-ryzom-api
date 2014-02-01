@@ -137,13 +137,8 @@ class Character:
         setattr(self, 'allegiance', fame.Allegiance(faction, nation))
 
 
-class Member:
-    def __init__(self, name, grade=None, joined=None):
-        self.name = name
-        if grade is not None:
-            self.grade = grade
-        if joined is not None:
-            self.joined = joined
+class GuildMember:
+    pass
 
 
 class Guild:
@@ -188,9 +183,11 @@ class Guild:
         if members is not None:
             setattr(self, 'members', [])
             for m in members.findall('member'):
-                self.members.append(Member(m.find('name').text,
-                                           m.find('grade').text,
-                                           m.find('joined').text))
+                member = GuildMember()
+                member.name = m.find('name').text
+                member.grade = m.find('grade').text
+                member.joined = RyzomDate(m.find('joined').text)
+                self.members.append(member)
 
     def icon_link(self, size='b', escape_url=False):
         params = urlencode({'size': size, 'icon': self.icon})

@@ -1,4 +1,4 @@
-.. _ryzomdate-label:
+.. _ryzomdate:
 
 RyzomDate
 =========
@@ -7,10 +7,6 @@ RyzomDate
 
    :param tick: the server tick, or the current one if not specified
    :type tick: int
-
-
-Methods
--------
 
    .. py:method:: ryzomapi.RyzomDate.locale(locale)
 

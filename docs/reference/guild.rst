@@ -1,4 +1,4 @@
-.. _guild-label:
+.. _guild:
 
 Guild
 =====
@@ -13,13 +13,9 @@ Guild
    .. note::
       The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
 
-
-Attributes
-----------
-
    .. py:attribute:: ryzomapi.Guild.id
 
-      (int) the guild's id.
+      (int) the guild's id
 
    .. py:attribute:: ryzomapi.Guild.gid
 
@@ -27,7 +23,7 @@ Attributes
 
    .. py:attribute:: ryzomapi.Guild.name
 
-      (str) the guild's name.
+      (str) the guild's name
 
    .. py:attribute:: ryzomapi.Guild.race
 
@@ -43,7 +39,7 @@ Attributes
 
    .. py:attribute:: ryzomapi.Guild.creation_date
 
-      (:ref:`ryzomdate-label`) the guild's creation date
+      (:ref:`ryzomdate`) the guild's creation date
 
    .. py:attribute:: ryzomapi.Guild.shard
 
@@ -55,11 +51,11 @@ Attributes
 
    .. py:attribute:: ryzomapi.Guild.money
 
-      (int) Number of dappers owned by the guild
+      (int) number of dappers owned by the guild
 
+   .. py:attribute:: ryzomapi.Guild.members
 
-Methods
--------
+      (list) list of :ref:`GuildMember <guildmember>`
 
    .. py:method:: ryzomapi.Guild.icon_link(size='b', escape_url=False)
 
@@ -77,3 +73,20 @@ Methods
 
       .. note::
          The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
+
+
+.. _guildmember:
+
+.. py:class:: ryzomapi.GuildMember()
+
+   .. py:attribute:: ryzomapi.Guild.name
+
+      (str) character's name
+
+   .. py:attribute:: ryzomapi.Guild.grade
+
+      (str) character's grade
+
+   .. py:attribute:: ryzomapi.Guild.joined
+
+      (:ref:`ryzomdate`) character's joined date
