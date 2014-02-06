@@ -22,15 +22,19 @@ import unittest
 
 class ItemsTest(unittest.TestCase):
     def test_item_loading(self):
+        i = Item()
+        self.assertEquals(i.sheet, None)
+
         i = Item('iczahp_3.sitem')
-        self.assertEquals(i.sheetid, 'iczahp_3')
+        self.assertEquals(i.sheet, 'iczahp_3')
+        self.assertEquals(i.icon_url(), '%s/item_icon.php?sheetid=iczahp_3' % RYZOM_API_BASE_URL)
 
     def test_sheetid_filter(self):
-        self.assertEquals(Item.filter_sheetid('icokamm2ms_1.sitem'), 'icokamm2ms_1')
-        self.assertEquals(Item.filter_sheetid('icokamm2ms_1'), 'icokamm2ms_1')
-        self.assertEquals(Item.filter_sheetid('lolsitem'), 'lolsitem')
-        self.assertEquals(Item.filter_sheetid('.sitem'), '')
-        self.assertEquals(Item.filter_sheetid(''), '')
+        self.assertEquals(Item('icokamm2ms_1.sitem').sheet, 'icokamm2ms_1')
+        self.assertEquals(Item('icokamm2ms_1').sheet, 'icokamm2ms_1')
+        self.assertEquals(Item('lolsitem').sheet, 'lolsitem')
+        self.assertEquals(Item('.sitem').sheet, '.sitem')
+        self.assertEquals(Item('').sheet, None)
 
 if __name__ == '__main__':
     unittest.main()

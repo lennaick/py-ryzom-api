@@ -32,6 +32,7 @@ from . import exceptions
 from . import fame
 from . import sas
 
+from os.path import splitext
 try:
     from urllib.parse import urlencode
     from html import escape
@@ -106,16 +107,12 @@ class APIKey:
 
 
 class Item:
-    __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed'}
+    __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
 
     def __init__(self, sheetid=None, xml=None):
-        self.sheetid = self.filter_sheetid(sheetid)
-
-    @staticmethod
-    def filter_sheetid(sheetid):
-        if sheetid is not None and sheetid[-6:] == '.sitem':
-            sheetid = sheetid[:-6]
-        return sheetid
+        self.sheet = splitext(str(sheetid or ''))[0] or None
+        if xml is not None:
+            self.load_from_xml(xml)
 
     def icon_url(self, escape_url=False):
         params = {}
@@ -126,6 +123,9 @@ class Item:
         if escape_url:
             ret = escape(ret)
         return ret
+
+    def load_from_xml(self, xml):
+        pass
 
 
 class Character:
