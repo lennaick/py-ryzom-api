@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<ryzomapi>
+  <guild apikey="g7f48c2a3c6bd683520ede8b1cd6bf59e77b25f0d" created="1390156169" modules="G01:P01" cached_until="1390155400">
+    <gid>6969</gid>
+    <name>The Test Guild Bis</name>
+    <description>To serve and debug</description>
+    <icon>110142619738866353</icon>
+    <shard>atys</shard>
+    <race>Matis</race>
+    <cult>karavan</cult>
+    <civilization>matis</civilization>
+    <creation_date>143032708</creation_date>
+    <building>181403709</building>
+    <motd>Blabliblou -&gt; &#xE0; test</motd>
+    <money>42000000</money>
+    <room>
+      <item id="7324991369486012301" slot="0">
+	<stack>109</stack>
+	<sheet>m0142dxaje01.sitem</sheet>
+	<quality>250</quality>
+	<requiredlevel>0</requiredlevel>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7281012343192275720" slot="1">
+	<stack>39</stack>
+	<sheet>m0067ckddd01.sitem</sheet>
+	<quality>210</quality>
+	<requiredlevel>0</requiredlevel>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7346982310704049331" slot="8">
+	<stack>5</stack>
+	<sheet>m0021dxapd01.sitem</sheet>
+	<quality>250</quality>
+	<requiredlevel>0</requiredlevel>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7300214888569723147" slot="9">
+	<stack>2</stack>
+	<sheet>m0118dxacb01.sitem</sheet>
+	<quality>250</quality>
+	<requiredlevel>0</requiredlevel>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7306321735052160899" slot="10">
+	<stack>184</stack>
+	<sheet>m0050dxape01.sitem</sheet>
+	<quality>250</quality>
+	<requiredlevel>0</requiredlevel>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7306546503605826530" slot="11">
+	<stack>26</stack>
+	<sheet>m0049dxape01.sitem</sheet>
+	<quality>250</quality>
+	<requiredlevel>0</requiredlevel>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+    </room>
+    <fame>
+      <fyros>-600000</fyros>
+      <matis>600000</matis>
+      <tryker>450000</tryker>
+      <zorai>4200</zorai>
+      <kami>-500000</kami>
+      <karavan>600000</karavan>
+    </fame>
+  </guild>
+</ryzomapi>

@@ -28,6 +28,12 @@ class CharacterTest(unittest.TestCase):
         self.assertEqual(character.name, 'Debughomin')
         self.assertEqual(character.allegiance.nation, 'matis')
         self.assertEqual(character.allegiance.faction, 'karavan')
+        with self.assertRaises(AttributeError):
+            character.bag
+
+        character = Character(from_file='tests/data/character_2.xml')
+        self.assertEqual(character.id, 6942)
+        self.assertEqual(len(character.bag), 56)
 
     def test_character_invalid_data(self):
         with self.assertRaises(InvalidAPIKeyException):

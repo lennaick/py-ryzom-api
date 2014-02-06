@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<ryzomapi>
+  <character apikey="c7dee114965fce8dadae6c06b4dc195f5f2b53f09" created="1390743810" modules="C01:A01:P01" cached_until="1390744110">
+    <id>6942</id>
+    <name>Mischomin</name>
+    <shard>Atys</shard>
+    <race>Tryker</race>
+    <gender>m</gender>
+    <titleid>#Dat other title</titleid>
+    <cult>Karavan</cult>
+    <civilization>Tryker</civilization>
+    <played lastlogin="1390646867" lastlogout="1390696669">25404804</played>
+    <body>
+      <hairtype>87</hairtype>
+      <haircolor>5</haircolor>
+      <tattoo>24</tattoo>
+      <eyescolor>0</eyescolor>
+      <gabarit height="10" torso="6" arms="8" legs="9" breast="7"/>
+      <morph target1="5" target2="6" target3="3" target4="3" target5="3" target6="1" target7="4" target8="3"/>
+    </body>
+    <guild>
+      <gid>4242</gid>
+      <name>The Test Guild</name>
+      <icon>110142619738866353</icon>
+      <grade>HighOfficer</grade>
+    </guild>
+    <equipment>
+      <arms slot="47" quality="250" color="3">icfals_3.sitem</arms>
+      <handr slot="53" quality="250" color="0">icmm2ms_3.sitem</handr>
+      <legs slot="54" quality="250" color="3">icmacp_3.sitem</legs>
+      <ankler slot="58" quality="250" color="6">icfja_3.sitem</ankler>
+      <chest slot="66" quality="250" color="3">icmalv_3.sitem</chest>
+      <hands slot="67" quality="250" color="3">icmalg_3.sitem</hands>
+      <anklel slot="69" quality="250" color="6">icfja_3.sitem</anklel>
+      <feet slot="70" quality="250" color="3">icmalb_3.sitem</feet>
+      <wristr slot="75" quality="250" color="6">icfjb_3.sitem</wristr>
+      <wristl slot="76" quality="250" color="6">icfjb_3.sitem</wristl>
+      <headdress slot="80" quality="223" color="6">icfjd_3.sitem</headdress>
+      <earl slot="81" quality="250" color="6">icfje_3.sitem</earl>
+      <earr slot="89" quality="250" color="6">icfje_3.sitem</earr>
+      <necklace slot="90" quality="250" color="6">icfjp_3.sitem</necklace>
+      <fingerl slot="91" quality="250" color="6">icfjr_3.sitem</fingerl>
+      <fingerr slot="92" quality="250" color="6">icfjr_3.sitem</fingerr>
+    </equipment>
+    <money>42000000</money>
+    <bag>
+      <item id="7294388254360620011" slot="0">
+	<stack>1</stack>
+	<sheet>tp_karavan_natae.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7302265318866620091" slot="1">
+	<stack>2</stack>
+	<sheet>tp_karavan_yrkanis.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7284930551690295233" slot="2">
+	<stack>1</stack>
+	<sheet>tp_karavan_fleetinggarden.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7320645824686771843" slot="3">
+	<stack>1</stack>
+	<sheet>tp_karavan_knollofdissent.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7345845604698791341" slot="4">
+	<stack>1</stack>
+	<sheet>tp_karavan_groveofconfusion.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7279066117444543160" slot="5">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_under_spring_fyros.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7345601345612175799" slot="6">
+	<stack>1</stack>
+	<sheet>tp_karavan_davae.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7319812218776147265" slot="9">
+	<stack>1</stack>
+	<sheet>iapf.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7316944971627315709" slot="10">
+	<stack>1</stack>
+	<sheet>tp_karavan_thesos.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7292509184692474527" slot="11">
+	<stack>1</stack>
+	<sheet>tp_karavan_oflovaksoasis.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7334754749304967248" slot="12">
+	<stack>1</stack>
+	<sheet>tp_karavan_sawdustmines.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7314199804623819246" slot="13">
+	<stack>1</stack>
+	<sheet>tp_karavan_almati.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7280704651763364346" slot="14">
+	<stack>1</stack>
+	<sheet>tp_karavan_upperbog.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7284743565990990686" slot="15">
+	<stack>1</stack>
+	<sheet>iasf.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7319813103539410244" slot="16">
+	<stack>1</stack>
+	<sheet>iapf.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7296588213919052780" slot="17">
+	<stack>1</stack>
+	<sheet>tp_karavan_thevoid.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7293555460200623946" slot="18">
+	<stack>1</stack>
+	<sheet>tp_karavan_gate_of_obscurity.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7289022358443702173" slot="19">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_land_of_continuity.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7284181324710275940" slot="20">
+	<stack>1</stack>
+	<sheet>tp_karavan_hereticshovel.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7284759985650963339" slot="21">
+	<stack>1</stack>
+	<sheet>iapf.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7279153700417374662" slot="22">
+	<stack>1</stack>
+	<sheet>tp_karavan_crystabell.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7303733746714023890" slot="23">
+	<stack>1</stack>
+	<sheet>tp_karavan_bountybeaches.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7284206106670887404" slot="24">
+	<stack>1</stack>
+	<sheet>tp_karavan_thefount.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7346365708056124307" slot="25">
+	<stack>155</stack>
+	<sheet>light_sap_recharge.sitem</sheet>
+	<quality>500</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7279028987452269100" slot="26">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_sunken_city.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7347487871343772358" slot="27">
+	<stack>1</stack>
+	<sheet>tp_karavan_forbidden_depths.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7303764438550321210" slot="29">
+	<stack>1</stack>
+	<sheet>tp_karavan_enchantedisle.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7348425948035798181" slot="30">
+	<stack>1</stack>
+	<sheet>tp_karavan_dewdrops.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7279023597268043459" slot="31">
+	<stack>1</stack>
+	<sheet>tp_karavan_restingwater.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7345121529045312777" slot="32">
+	<stack>2</stack>
+	<sheet>tp_karavan_avalae.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7288410136625459104" slot="33">
+	<stack>1</stack>
+	<sheet>tp_karavan_dyron.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7280797019330032587" slot="34">
+	<stack>1</stack>
+	<sheet>tp_karavan_hiddensource.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7283634279020063065" slot="35">
+	<stack>1</stack>
+	<sheet>tp_karavan_knotofdementia.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7303330857303090248" slot="36">
+	<stack>2</stack>
+	<sheet>tp_karavan_pyr.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7282561516449288618" slot="37">
+	<stack>1</stack>
+	<sheet>itforagematis_1.sitem</sheet>
+	<quality>250</quality>
+	<locked>1</locked>
+	<hp>64</hp>
+	<craftparameters>
+	  <durability>1.000000</durability>
+	  <weight>1.000000</weight>
+	  <hpbuff>80</hpbuff>
+	  <focusbuff>200</focusbuff>
+	  <protection>None</protection>
+	  <protection1>None</protection1>
+	  <protection2>None</protection2>
+	  <protection3>None</protection3>
+	</craftparameters>
+      </item>
+      <item id="7304124769122857138" slot="38">
+	<stack>2</stack>
+	<sheet>tp_karavan_zora.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7305093980032811137" slot="39">
+	<stack>2</stack>
+	<sheet>tp_karavan_fairhaven.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7294437848347987180" slot="40">
+	<stack>1</stack>
+	<sheet>tp_karavan_havenofpurity.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7315290580289223938" slot="41">
+	<stack>32</stack>
+	<sheet>rpjobitem_201_b0.sitem</sheet>
+	<quality>50</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7333235159808943823" slot="42">
+	<stack>1</stack>
+	<sheet>tp_karavan_thescorchedcorridor.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7289903213286442241" slot="43">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_abyss_of_ichor_matis.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7344563715872774773" slot="44">
+	<stack>1</stack>
+	<sheet>icmams_3.sitem</sheet>
+	<quality>250</quality>
+	<locked>1</locked>
+	<hp>202</hp>
+	<craftparameters>
+	  <durability>1.000000</durability>
+	  <weight>0.500000</weight>
+	  <statenergy>0.500000</statenergy>
+	  <dodgemodifier>0.820000</dodgemodifier>
+	  <parrymodifier>0.460000</parrymodifier>
+	  <protectionfactor>0.400000</protectionfactor>
+	  <maxslashingprotection>0.380000</maxslashingprotection>
+	  <maxbluntprotection>0.580000</maxbluntprotection>
+	  <maxpiercingprotection>0.460000</maxpiercingprotection>
+	  <color>7</color>
+	  <hpbuff>125</hpbuff>
+	  <protection>None</protection>
+	  <protection1>None</protection1>
+	  <protection2>None</protection2>
+	  <protection3>None</protection3>
+	</craftparameters>
+      </item>
+      <item id="7284738403443831845" slot="45">
+	<stack>1</stack>
+	<sheet>tp_karavan_maidengrove.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7296738512004158486" slot="46">
+	<stack>1</stack>
+	<sheet>tp_karavan_groveofumbra.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7322036818565498424" slot="47">
+	<stack>1</stack>
+	<sheet>tp_karavan_nexus_terre.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7336930060042546961" slot="49">
+	<stack>1</stack>
+	<sheet>tp_karavan_frahartowers.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7332075338248776680" slot="50">
+	<stack>1</stack>
+	<sheet>tp_karavan_outlawcanyon.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7282836093708523032" slot="51">
+	<stack>1</stack>
+	<sheet>crystalized_spell.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+	<sapload/>
+	<enchantment cost="-260">
+	  <sbrick>bmpa04.sbrick</sbrick>
+	  <sbrick>bmdhtea01.sbrick</sbrick>
+	  <sbrick>bmdhtmp00250.sbrick</sbrick>
+	  <sbrick>bmca00100.sbrick</sbrick>
+	  <sbrick>bmcp00080.sbrick</sbrick>
+	  <sbrick>bmcr00080.sbrick</sbrick>
+	</enchantment>
+      </item>
+      <item id="7279180075811539610" slot="55">
+	<stack>1</stack>
+	<sheet>tp_karavan_windsofmuse.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7281696939530706465" slot="57">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_elusive_forest.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7314324917022254856" slot="59">
+	<stack>30</stack>
+	<sheet>rpjobitem_201_a0.sitem</sheet>
+	<quality>50</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7318974463930223198" slot="61">
+	<stack>1</stack>
+	<sheet>tp_karavan_lagoonsofloria.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7319617377585510957" slot="62">
+	<stack>1</stack>
+	<sheet>tp_karavan_avendale.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7296364497658551570" slot="68">
+	<stack>1</stack>
+	<sheet>tp_karavan_windermeer.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7288177134647326263" slot="78">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_trench_of_trials_zorai.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7288870501281893027" slot="82">
+	<stack>1</stack>
+	<sheet>tp_karavan_the_windy_gate.sitem</sheet>
+	<quality>1</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+    </bag>
+    <room>
+      <item id="7316936450409062833" slot="0">
+	<stack>21</stack>
+	<sheet>m0471chvfd01.sitem</sheet>
+	<quality>260</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7316936377394618801" slot="1">
+	<stack>13</stack>
+	<sheet>m0616chvfd01.sitem</sheet>
+	<quality>260</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7316936523423506865" slot="2">
+	<stack>18</stack>
+	<sheet>m0615chvfd01.sitem</sheet>
+	<quality>260</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7316936304380174769" slot="3">
+	<stack>24</stack>
+	<sheet>m0617chvfd01.sitem</sheet>
+	<quality>260</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7316786998432062963" slot="4">
+	<stack>409</stack>
+	<sheet>m0242dxacf01.sitem</sheet>
+	<quality>250</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+      <item id="7346481848269122803" slot="5">
+	<stack>3</stack>
+	<sheet>m0155dxafe01.sitem</sheet>
+	<quality>248</quality>
+	<locked>0</locked>
+	<hp>0</hp>
+      </item>
+    </room>
+    <pets>
+      <animal index="0">
+	<sheet>chifb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>520.34351</satiety>
+      </animal>
+      <animal index="1">
+	<sheet>chjfb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>582.30866</satiety>
+      </animal>
+      <animal index="2">
+	<sheet>chjfb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>785.57556</satiety>
+      </animal>
+      <animal index="3">
+	<sheet>chjfb2.creature</sheet>
+	<status>landscape</status>
+	<satiety>788.03888</satiety>
+      </animal>
+    </pets>
+    <fame>
+      <fyros>-600000</fyros>
+      <kami>-600000</kami>
+      <karavan>600000</karavan>
+      <matis>600000</matis>
+      <tribe_ancient_dryads>-600000</tribe_ancient_dryads>
+      <tribe_antikamis>99545</tribe_antikamis>
+      <tribe_company_of_the_eternal_tree>-300000</tribe_company_of_the_eternal_tree>
+      <tribe_corsair>-189334</tribe_corsair>
+      <tribe_darkening_sap>307241</tribe_darkening_sap>
+      <tribe_ecowarriors>-300000</tribe_ecowarriors>
+      <tribe_first_deserter>-417874</tribe_first_deserter>
+      <tribe_frahar_hunters>167814</tribe_frahar_hunters>
+      <tribe_goo_heads>99545</tribe_goo_heads>
+      <tribe_green_seed>315089</tribe_green_seed>
+      <tribe_icon_workshipers>400388</tribe_icon_workshipers>
+      <tribe_lagoon_brothers>-402760</tribe_lagoon_brothers>
+      <tribe_lawless>-401752</tribe_lawless>
+      <tribe_leviers>-95747</tribe_leviers>
+      <tribe_master_of_the_goo>-540</tribe_master_of_the_goo>
+      <tribe_oasis_diggers>9924</tribe_oasis_diggers>
+      <tribe_pyromancers>9924</tribe_pyromancers>
+      <tribe_renegades>294735</tribe_renegades>
+      <tribe_restorers>-294735</tribe_restorers>
+      <tribe_root_tappers>111506</tribe_root_tappers>
+      <tribe_sacred_sap>-312854</tribe_sacred_sap>
+      <tribe_sap_slaves>315598</tribe_sap_slaves>
+      <tribe_scorchers>-403531</tribe_scorchers>
+      <tribe_shadow_runners>-297975</tribe_shadow_runners>
+      <tribe_siblings_of_the_weeds>-99545</tribe_siblings_of_the_weeds>
+      <tribe_silt_sculptors>210416</tribe_silt_sculptors>
+      <tribe_slavers>295979</tribe_slavers>
+      <tribe_the_arid_matis>318533</tribe_the_arid_matis>
+      <tribe_the_kuilde>307376</tribe_the_kuilde>
+      <tribe_the_slash_and_burn>-417874</tribe_the_slash_and_burn>
+      <tribe_tutors>-399805</tribe_tutors>
+      <tribe_water_breakers>127599</tribe_water_breakers>
+      <tribe_woven_bridles>-509836</tribe_woven_bridles>
+      <tryker>42042</tryker>
+      <zorai>0</zorai>
+    </fame>
+  </character>
+</ryzomapi>

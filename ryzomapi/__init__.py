@@ -156,6 +156,14 @@ class Character:
         if f is not None:
             setattr(self, 'fame', fame.Fame(f))
 
+        for container in ('bag', 'room', 'shop'):
+            f = node.find(container)
+            if f is not None:
+                lst = []
+                for i in f.findall('item'):
+                    lst.append(Item(xml=i))
+                setattr(self, container, lst)
+
         faction = node.find('cult').text if node.find('cult') is not None else None
         nation = node.find('civilization').text if node.find('civilization') is not None else None
         setattr(self, 'allegiance', fame.Allegiance(faction, nation))
@@ -212,6 +220,13 @@ class Guild:
                 member.grade = m.find('grade').text
                 member.joined = RyzomDate(m.find('joined').text)
                 self.members.append(member)
+
+        f = node.find('room')
+        if f is not None:
+            lst = []
+            for i in f.findall('item'):
+                lst.append(Item(xml=i))
+            setattr(self, 'room', lst)
 
     def icon_url(self, size='b', escape_url=False):
         params = urlencode({'size': size, 'icon': self.icon})

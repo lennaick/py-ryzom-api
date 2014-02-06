@@ -48,6 +48,11 @@ class GuildsTest(unittest.TestCase):
         self.assertEqual(guild.id, 4242)
         self.assertEqual(guild.name, 'The Test Guild')
         self.assertEqual(guild.icon, '110142619738866353')
+        with self.assertRaises(AttributeError):
+            guild.room
+
+        guild = Guild(from_file='tests/data/guild_4.xml')
+        self.assertEqual(len(guild.room), 6)
 
     def test_guild_invalid_data(self):
         with self.assertRaises(InvalidAPIKeyException):
