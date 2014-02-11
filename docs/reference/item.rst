@@ -10,6 +10,10 @@ Item
    :param xml: the item sheet id
    :type xml: XML Element Node
 
+   .. py:attribute:: ryzomapi.Item.tags
+
+      (list) List of tags characterizing the item
+
    .. py:attribute:: ryzomapi.Item.sheet
 
       (str) The sheet id, without .sitem

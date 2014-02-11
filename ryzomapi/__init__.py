@@ -29,6 +29,7 @@ api_key_pattern = re.compile('^(g|c)[a-f0-9]{40}$')
 
 
 from . import exceptions
+from . import itemtags
 from . import fame
 from . import sas
 
@@ -119,18 +120,24 @@ class ItemStats:
 class Item:
     __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
     __allowed = {'sheet': str, 'quality': int, 'color': int, 'stack': int, 'sapload': int, 'destroyed': int, 'locked': int}
+    __tag_sort_order = ('material', 'catalyser')
 
     def __init__(self, sheetid=None, xml=None):
-        self.tags = []
         self.sheet = splitext(str(sheetid or ''))[0] or None
         if xml is not None:
             self.__load_from_xml(xml)
+        self.tags = []
+        if self.sheet is not None:
+            for tag_name, tag_re in itemtags.available_tags:
+                if re.match(tag_re, self.sheet):
+                    self.tags.append(tag_name)
 
     def icon_url(self, escape_url=False):
         params = {}
         for attr_name, url_name in self.__url_attrs.items():
             if hasattr(self, attr_name):
                 params[url_name] = getattr(self, attr_name)
+        params['sheetid'] = '%s.sitem' % params['sheetid']
         ret = '%s/item_icon.php?%s' % (RYZOM_API_BASE_URL, urlencode(params))
         if escape_url:
             ret = escape(ret)
@@ -145,6 +152,7 @@ class Item:
             setattr(self, 'stats', ItemStats(stats))
             if hasattr(self.stats, 'color'):
                 setattr(self, 'color', self.stats.color)
+        self.sheet = splitext(str(self.sheet or ''))[0]
 
     def __attr_lt(self, other, attr_name, cmp_func):
         if not hasattr(self, attr_name) and not hasattr(other, attr_name):
@@ -156,6 +164,11 @@ class Item:
         return cmp_func(getattr(self, attr_name), getattr(other, attr_name))
 
     def __lt__(self, other):
+        for tag in self.__tag_sort_order:
+            if tag in self.tags and tag not in other.tags:
+                return True
+            if tag not in self.tags and tag in other.tags:
+                return False
         if self.__attr_lt(other, 'quality', lambda q1, q2: q1 < q2):
             return True
         return False
