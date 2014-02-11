@@ -36,5 +36,23 @@ class ItemsTest(unittest.TestCase):
         self.assertEquals(Item('.sitem').sheet, '.sitem')
         self.assertEquals(Item('').sheet, None)
 
+    def test_equality(self):
+        i1 = Item('iczahp_3')
+        i2 = Item('iczahp_3.sitem')
+        i3 = Item('icokamm2ms_1.sitem')
+
+        self.assertEquals(i1, i2)
+        self.assertNotEquals(i1, i3)
+        self.assertNotEquals(i2, i3)
+        self.assertEquals(i1 == i2, True)
+        self.assertEquals(i1 != i2, False)
+        self.assertEquals(i1 == i3, False)
+        self.assertEquals(i1 != i3, True)
+
+        i1.quality = 250
+        self.assertNotEquals(i1, i2)
+        i2.quality = 250
+        self.assertEquals(i1, i2)
+
 if __name__ == '__main__':
     unittest.main()
