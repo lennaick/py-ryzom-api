@@ -33,6 +33,7 @@ from . import fame
 from . import sas
 
 from os.path import splitext
+from functools import total_ordering
 try:
     from urllib.parse import urlencode
     from html import escape
@@ -106,8 +107,10 @@ class APIKey:
         return self.key[0] == key_type.lower()[0]
 
 
+@total_ordering
 class Item:
     __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
+    __allowed = ('sheet', 'quality', 'color', 'stack', 'sap', 'destroyed', 'locked')
 
     def __init__(self, sheetid=None, xml=None):
         self.sheet = splitext(str(sheetid or ''))[0] or None
@@ -127,26 +130,28 @@ class Item:
     def load_from_xml(self, xml):
         pass
 
-    def __lt__(self, other):
-        raise NotImplemented
+    def __attr_lt(self, other, attr_name, cmp_func):
+        if not hasattr(self, attr_name) and not hasattr(other, attr_name):
+            return False
+        if not hasattr(self, attr_name) and hasattr(other, attr_name):
+            return True
+        if hasattr(self, attr_name) and not hasattr(other, attr_name):
+            return False
+        return cmp_func(getattr(self, attr_name), getattr(other, attr_name))
 
-    def __le__(self, other):
-        return self.__eq__(other) or self.__lt__(other)
+    def __lt__(self, other):
+        if self.__attr_lt(other, 'quality', lambda q1, q2: q1 < q2):
+            return True
+        return False
 
     def __eq__(self, other):
-        for attr_name in self.__url_attrs:
+        for attr_name in self.__allowed:
             if getattr(self, attr_name, None) != getattr(other, attr_name, None):
                 return False
         return True
 
     def __ne__(self, other):
         return not self.__eq__(other)
-
-    def __gt__(self, other):
-        return not self.__lt__(other)
-
-    def __ge__(self, other):
-        return self.__eq__(other) or self.__ge__(other)
 
 
 class Character:

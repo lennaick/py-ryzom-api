@@ -23,7 +23,7 @@ import unittest
 class ItemsTest(unittest.TestCase):
     def test_item_loading(self):
         i = Item()
-        self.assertEquals(i.sheet, None)
+        self.assertIsNone(i.sheet)
 
         i = Item('iczahp_3.sitem')
         self.assertEquals(i.sheet, 'iczahp_3')
@@ -34,9 +34,9 @@ class ItemsTest(unittest.TestCase):
         self.assertEquals(Item('icokamm2ms_1').sheet, 'icokamm2ms_1')
         self.assertEquals(Item('lolsitem').sheet, 'lolsitem')
         self.assertEquals(Item('.sitem').sheet, '.sitem')
-        self.assertEquals(Item('').sheet, None)
+        self.assertIsNone(Item('').sheet)
 
-    def test_equality(self):
+    def test_comparison(self):
         i1 = Item('iczahp_3')
         i2 = Item('iczahp_3.sitem')
         i3 = Item('icokamm2ms_1.sitem')
@@ -44,15 +44,24 @@ class ItemsTest(unittest.TestCase):
         self.assertEquals(i1, i2)
         self.assertNotEquals(i1, i3)
         self.assertNotEquals(i2, i3)
-        self.assertEquals(i1 == i2, True)
-        self.assertEquals(i1 != i2, False)
-        self.assertEquals(i1 == i3, False)
-        self.assertEquals(i1 != i3, True)
+        self.assertTrue(i1 == i2)
+        self.assertFalse(i1 != i2)
+        self.assertFalse(i1 == i3)
+        self.assertTrue(i1 != i3)
 
         i1.quality = 250
         self.assertNotEquals(i1, i2)
+        self.assertTrue(i1 > i2)
+        self.assertTrue(i1 >= i2)
+        self.assertFalse(i1 < i2)
+        self.assertFalse(i1 <= i2)
+
         i2.quality = 250
         self.assertEquals(i1, i2)
+        self.assertFalse(i1 > i2)
+        self.assertTrue(i1 >= i2)
+        self.assertFalse(i1 < i2)
+        self.assertTrue(i1 <= i2)
 
 if __name__ == '__main__':
     unittest.main()
