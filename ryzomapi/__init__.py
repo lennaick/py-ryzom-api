@@ -121,9 +121,10 @@ class Item:
     __allowed = {'sheet': str, 'quality': int, 'color': int, 'stack': int, 'sapload': int, 'destroyed': int, 'locked': int}
 
     def __init__(self, sheetid=None, xml=None):
+        self.tags = []
         self.sheet = splitext(str(sheetid or ''))[0] or None
         if xml is not None:
-            self.load_from_xml(xml)
+            self.__load_from_xml(xml)
 
     def icon_url(self, escape_url=False):
         params = {}
@@ -135,7 +136,7 @@ class Item:
             ret = escape(ret)
         return ret
 
-    def load_from_xml(self, xml):
+    def __load_from_xml(self, xml):
         for attr_name, convert_func in self.__allowed.items():
             if xml.find(attr_name) is not None and xml.find(attr_name).text is not None:
                 setattr(self, attr_name, convert_func(xml.find(attr_name).text))
@@ -174,7 +175,7 @@ class Character:
 
     def __init__(self, api_key=None, from_file=None):
         if api_key is not None or from_file is not None:
-            self.load(api_key, from_file)
+            self.__load(api_key, from_file)
 
         if hasattr(self, 'id'):
             self.id = int(self.id)
@@ -182,7 +183,7 @@ class Character:
     def __str__(self):
         return self.name
 
-    def load(self, api_key, from_file):
+    def __load(self, api_key, from_file):
         if from_file is None:
             api_key = APIKey(api_key, 'character')
         data = sas.get('character', apikey=api_key, from_file=from_file)
@@ -221,7 +222,7 @@ class Guild:
 
     def __init__(self, api_key=None, from_file=None):
         if api_key is not None or from_file is not None:
-            self.load(api_key, from_file)
+            self.__load(api_key, from_file)
 
         if hasattr(self, 'creation_date'):
             self.creation_date = RyzomDate(self.creation_date)
@@ -234,7 +235,7 @@ class Guild:
     def __str__(self):
         return self.name
 
-    def load(self, api_key, from_file):
+    def __load(self, api_key, from_file):
         if from_file is None:
             api_key = APIKey(api_key, 'guild')
         data = sas.get('guild', apikey=api_key, from_file=from_file)

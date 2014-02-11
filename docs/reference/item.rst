@@ -19,3 +19,9 @@ Item
       :param escape_url: whether the returned url should be escaped or not
       :type escape_url: bool
       :return: the item's icon url
+
+
+Item comparison
+---------------
+
+It is possible to compare items using the common comparison operators. This comparison is based on the in-game display order.

@@ -13,13 +13,37 @@ Guild
    .. note::
       The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
 
-   .. py:attribute:: ryzomapi.Guild.id
+   .. py:attribute:: ryzomapi.Guild.creation_date
 
-      (int) the guild's id
+      (:ref:`ryzomdate`) the guild's creation date
+
+   .. py:attribute:: ryzomapi.Guild.description
+
+      (str) the guild's description
 
    .. py:attribute:: ryzomapi.Guild.gid
 
       (int) Alias for `id`
+
+   .. py:attribute:: ryzomapi.Guild.icon
+
+      (str) Guild icon id
+
+   .. py:attribute:: ryzomapi.Guild.id
+
+      (int) the guild's id
+
+   .. py:attribute:: ryzomapi.Guild.members
+
+      (list) list of :ref:`GuildMember <guildmember>`
+
+   .. py:attribute:: ryzomapi.Guild.money
+
+      (int) number of dappers owned by the guild
+
+   .. py:attribute:: ryzomapi.Guild.motd
+
+      (str) the guild's message of the day
 
    .. py:attribute:: ryzomapi.Guild.name
 
@@ -29,33 +53,13 @@ Guild
 
       (str) the guild's race
 
-   .. py:attribute:: ryzomapi.Guild.icon
+   .. py:attribute:: ryzomapi.Guild.room
 
-      (str) Guild icon id
-
-   .. py:attribute:: ryzomapi.Guild.description
-
-      (str) the guild's description
-
-   .. py:attribute:: ryzomapi.Guild.creation_date
-
-      (:ref:`ryzomdate`) the guild's creation date
+      (list) sorted list of :ref:`Item <item>` in the guild hall
 
    .. py:attribute:: ryzomapi.Guild.shard
 
       (str) the guild's shard
-
-   .. py:attribute:: ryzomapi.Guild.motd
-
-      (str) the guild's message of the day
-
-   .. py:attribute:: ryzomapi.Guild.money
-
-      (int) number of dappers owned by the guild
-
-   .. py:attribute:: ryzomapi.Guild.members
-
-      (list) list of :ref:`GuildMember <guildmember>`
 
    .. py:method:: ryzomapi.Guild.icon_url(size='b', escape_url=False)
 
@@ -79,10 +83,6 @@ Guild
 
 .. py:class:: ryzomapi.GuildMember()
 
-   .. py:attribute:: ryzomapi.Guild.name
-
-      (str) character's name
-
    .. py:attribute:: ryzomapi.Guild.grade
 
       (str) character's grade
@@ -90,3 +90,7 @@ Guild
    .. py:attribute:: ryzomapi.Guild.joined
 
       (:ref:`ryzomdate`) character's joined date
+
+   .. py:attribute:: ryzomapi.Guild.name
+
+      (str) character's name

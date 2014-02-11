@@ -13,6 +13,22 @@ Character
    .. note::
       The from_file parameter is intended for unit testing purposes only, you should not use it in your applications.
 
+   .. py:attribute:: ryzomapi.Character.allegiance
+
+      (ryzomapi.fame.Allegiance) The character's allegiances.
+
+   .. py:attribute:: ryzomapi.Character.bag
+
+      (list) sorted list of :ref:`Item <item>` in the bag
+
+   .. py:attribute:: ryzomapi.Character.fame
+
+      (ryzomapi.fame.Fame) The character's fames.
+
+   .. py:attribute:: ryzomapi.Character.gender
+
+      (string) The character's gender.
+
    .. py:attribute:: ryzomapi.Character.id
 
       (int) The character's id.
@@ -21,25 +37,21 @@ Character
 
       (string) The character's name.
 
-   .. py:attribute:: ryzomapi.Character.shard
-
-      (string) The shard's name.
-
    .. py:attribute:: ryzomapi.Character.race
 
       (string) The character's race.
 
-   .. py:attribute:: ryzomapi.Character.gender
+   .. py:attribute:: ryzomapi.Character.room
 
-      (string) The character's gender.
+      (list) sorted list of :ref:`Item <item>` in the appartment
 
-   .. py:attribute:: ryzomapi.Character.fame
+   .. py:attribute:: ryzomapi.Character.shard
 
-      (ryzomapi.fame.Fame) The character's fames.
+      (string) The shard's name.
 
-   .. py:attribute:: ryzomapi.Character.allegiance
+   .. py:attribute:: ryzomapi.Character.shop
 
-      (ryzomapi.fame.Allegiance) The character's allegiances.
+      (list) sorted list of :ref:`Item <item>` in the shop
 
 
 Examples
