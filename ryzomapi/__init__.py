@@ -107,6 +107,14 @@ class APIKey:
         return self.key[0] == key_type.lower()[0]
 
 
+class ItemStats:
+    __allowed = {'color': int}
+
+    def __init__(self, xml):
+        for attr_name, convert_func in self.__allowed.items():
+            if xml.find(attr_name) is not None and xml.find(attr_name).text is not None:
+                setattr(self, attr_name, convert_func(xml.find(attr_name).text))
+
 @total_ordering
 class Item:
     __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
@@ -131,6 +139,11 @@ class Item:
         for attr_name, convert_func in self.__allowed.items():
             if xml.find(attr_name) is not None and xml.find(attr_name).text is not None:
                 setattr(self, attr_name, convert_func(xml.find(attr_name).text))
+        stats = xml.find('craftparameters')
+        if stats is not None:
+            setattr(self, 'stats', ItemStats(stats))
+            if hasattr(self.stats, 'color'):
+                setattr(self, 'color', self.stats.color)
 
     def __attr_lt(self, other, attr_name, cmp_func):
         if not hasattr(self, attr_name) and not hasattr(other, attr_name):
