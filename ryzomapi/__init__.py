@@ -188,6 +188,7 @@ class Character:
                 lst = []
                 for i in f.findall('item'):
                     lst.append(Item(xml=i))
+                lst.sort()
                 setattr(self, container, lst)
 
         faction = node.find('cult').text if node.find('cult') is not None else None
@@ -252,6 +253,7 @@ class Guild:
             lst = []
             for i in f.findall('item'):
                 lst.append(Item(xml=i))
+            lst.sort()
             setattr(self, 'room', lst)
 
     def icon_url(self, size='b', escape_url=False):
