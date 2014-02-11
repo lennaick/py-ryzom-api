@@ -110,7 +110,7 @@ class APIKey:
 @total_ordering
 class Item:
     __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
-    __allowed = ('sheet', 'quality', 'color', 'stack', 'sap', 'destroyed', 'locked')
+    __allowed = {'sheet': str, 'quality': int, 'color': int, 'stack': int, 'sapload': int, 'destroyed': int, 'locked': int}
 
     def __init__(self, sheetid=None, xml=None):
         self.sheet = splitext(str(sheetid or ''))[0] or None
@@ -128,7 +128,9 @@ class Item:
         return ret
 
     def load_from_xml(self, xml):
-        pass
+        for attr_name, convert_func in self.__allowed.items():
+            if xml.find(attr_name) is not None and xml.find(attr_name).text is not None:
+                setattr(self, attr_name, convert_func(xml.find(attr_name).text))
 
     def __attr_lt(self, other, attr_name, cmp_func):
         if not hasattr(self, attr_name) and not hasattr(other, attr_name):
