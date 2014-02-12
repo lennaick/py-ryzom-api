@@ -83,14 +83,14 @@ Guild
 
 .. py:class:: ryzomapi.GuildMember()
 
-   .. py:attribute:: ryzomapi.Guild.grade
+   .. py:attribute:: ryzomapi.GuildMember.grade
 
       (str) character's grade
 
-   .. py:attribute:: ryzomapi.Guild.joined
+   .. py:attribute:: ryzomapi.GuildMember.joined
 
       (:ref:`ryzomdate`) character's joined date
 
-   .. py:attribute:: ryzomapi.Guild.name
+   .. py:attribute:: ryzomapi.GuildMember.name
 
       (str) character's name
