@@ -27,7 +27,7 @@ class ItemsTest(unittest.TestCase):
 
         i = Item('iczahp_3.sitem')
         self.assertEquals(i.sheet, 'iczahp_3')
-        self.assertEquals(i.icon_url(), '%s/item_icon.php?sheetid=iczahp_3' % RYZOM_API_BASE_URL)
+        self.assertEquals(i.icon_url(), '%s/item_icon.php?sheetid=iczahp_3.sitem' % RYZOM_API_BASE_URL)
 
     def test_sheetid_filter(self):
         self.assertEquals(Item('icokamm2ms_1.sitem').sheet, 'icokamm2ms_1')
