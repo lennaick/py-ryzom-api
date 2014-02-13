@@ -63,5 +63,30 @@ class ItemsTest(unittest.TestCase):
         self.assertFalse(i1 < i2)
         self.assertTrue(i1 <= i2)
 
+    def test_jewels(self):
+        self.assertIn('jewel', Item('icfjr.').tags)
+        self.assertIn('fyros', Item('icfjr.').tags)
+        self.assertIn('ring', Item('icfjr.').tags)
+
+        self.assertIn('jewel', Item('ictjp_3.sitem').tags)
+        self.assertIn('tryker', Item('ictjp_3.sitem').tags)
+        self.assertIn('skin3', Item('ictjp_3.sitem').tags)
+        self.assertIn('pendant', Item('ictjp_3.sitem').tags)
+
+        self.assertIn('jewel', Item('icmja').tags)
+        self.assertIn('matis', Item('icmja').tags)
+        self.assertIn('anklet', Item('icmja').tags)
+
+    def test_tools(self):
+        self.assertIn('tool', Item('itforage').tags)
+        self.assertIn('pick', Item('itforage').tags)
+
+        self.assertIn('tool', Item('ittool.sitem').tags)
+        self.assertIn('tool_tool', Item('ittool.sitem').tags)
+
+        self.assertIn('tool', Item('icokartforage_1').tags)
+        self.assertIn('pick', Item('icokartforage_1').tags)
+        self.assertIn('skin1', Item('icokartforage_1').tags)
+
 if __name__ == '__main__':
     unittest.main()

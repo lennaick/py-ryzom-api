@@ -120,7 +120,12 @@ class ItemStats:
 class Item:
     __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
     __allowed = {'sheet': str, 'quality': int, 'color': int, 'stack': int, 'sapload': int, 'destroyed': int, 'locked': int}
-    __tag_sort_order = ('material', 'catalyser')
+    __tag_sort_order = ('light_boots', 'light_gloves', 'light_pants', 'light_sleeves', 'light_vest',
+                        'medium_boots', 'medium_gloves', 'medium_pants', 'medium_sleeves', 'medium_vest',
+                        'heavy_boots', 'heavy_gloves', 'heavy_pants', 'heavy_sleeves', 'heavy_vest', 'heavy_helmet',
+                        'jewel',
+                        'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
+                        'catalyser')
 
     def __init__(self, sheetid=None, xml=None):
         self.sheet = splitext(str(sheetid or ''))[0] or None
@@ -154,14 +159,21 @@ class Item:
                 setattr(self, 'color', self.stats.color)
         self.sheet = splitext(str(self.sheet or ''))[0]
 
-    def __attr_lt(self, other, attr_name, cmp_func):
+    def __attr_lt(self, other, attr_name):
         if not hasattr(self, attr_name) and not hasattr(other, attr_name):
             return False
         if not hasattr(self, attr_name) and hasattr(other, attr_name):
             return True
         if hasattr(self, attr_name) and not hasattr(other, attr_name):
             return False
-        return cmp_func(getattr(self, attr_name), getattr(other, attr_name))
+        return getattr(self, attr_name) < getattr(other, attr_name)
+
+    def __attr_eq(self, other, attr_name):
+        if not hasattr(self, attr_name) and not hasattr(other, attr_name):
+            return True
+        if not hasattr(self, attr_name) or not hasattr(other, attr_name):
+            return False
+        return getattr(self, attr_name) == getattr(other, attr_name)
 
     def __lt__(self, other):
         for tag in self.__tag_sort_order:
@@ -169,8 +181,10 @@ class Item:
                 return True
             if tag not in self.tags and tag in other.tags:
                 return False
-        if self.__attr_lt(other, 'quality', lambda q1, q2: q1 < q2):
+        if self.__attr_lt(other, 'quality'):
             return True
+        if self.__attr_eq(other, 'quality'):
+            return self.sheet < other.sheet
         return False
 
     def __eq__(self, other):

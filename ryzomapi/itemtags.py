@@ -17,18 +17,78 @@
 import re
 
 available_tags = (
-    ('catalyser', re.compile('^ixpca01$')),
-    ('material', re.compile('^m')),
+    # Armors
+    ('armor', re.compile('^ic[mtzfoc]a')),
+    ('boots', re.compile('^ic[mtzfoc]a[lmh]b')),
+    ('gloves', re.compile('^ic[mtzfoc]a[lmh]g')),
+    ('pants', re.compile('^ic[mtzfoc]a[lmh]p')),
+    ('sleeves', re.compile('^ic[mtzfoc]a[lmh]s')),
+    ('vest', re.compile('^ic[mtzfoc]a[lmh]v')),
+    ('helmet', re.compile('^ic[mtzfoc]a[lmh]h')),
+    ('light_armor', re.compile('^ic[mtzfoc]al')),
+    ('light_boots', re.compile('^ic[mtzfoc]alb')),
+    ('light_gloves', re.compile('^ic[mtzfoc]alg')),
+    ('light_pants', re.compile('^ic[mtzfoc]alp')),
+    ('light_sleeves', re.compile('^ic[mtzfoc]als')),
+    ('light_vest', re.compile('^ic[mtzfoc]alv')),
+    ('medium_armor', re.compile('^ic[mtzfoc]am')),
+    ('medium_boots', re.compile('^ic[mtzfoc]amb')),
+    ('medium_gloves', re.compile('^ic[mtzfoc]amg')),
+    ('medium_pants', re.compile('^ic[mtzfoc]amp')),
+    ('medium_sleeves', re.compile('^ic[mtzfoc]ams')),
+    ('medium_vest', re.compile('^ic[mtzfoc]amv')),
+    ('heavy_armor', re.compile('^ic[mtzfoc]ah')),
+    ('heavy_boots', re.compile('^ic[mtzfoc]ahb')),
+    ('heavy_gloves', re.compile('^ic[mtzfoc]ahg')),
+    ('heavy_pants', re.compile('^ic[mtzfoc]ahp')),
+    ('heavy_sleeves', re.compile('^ic[mtzfoc]ahs')),
+    ('heavy_vest', re.compile('^ic[mtzfoc]ahv')),
+    ('heavy_helmet', re.compile('^ic[mtzfoc]ahh')),
+
+    #Jewels
+    ('jewel', re.compile('^ic[mtzfoc]j[abdepr]')),
+    ('anklet', re.compile('^ic[mtzfoc]ja')),
+    ('bracelet', re.compile('^ic[mtzfoc]jb')),
+    ('diadem', re.compile('^ic[mtzfoc]jd')),
+    ('earring', re.compile('^ic[mtzfoc]je')),
+    ('pendant', re.compile('^ic[mtzfoc]jp')),
+    ('ring', re.compile('^ic[mtzfoc]jr')),
+
+    # Tools
+    ('tool', re.compile('^it')),
+    ('tool', re.compile('^ic[mtzfoc](kar|kam)t')),
+    ('armor_tool', re.compile('^itarmor')),
+    ('armor_tool', re.compile('^ic[mtzfoc](kar|kam)tarmor')),
+    ('ammo_tool', re.compile('^itammo')),
+    ('ammo_tool', re.compile('^ic[mtzfoc](kar|kam)tammo')),
+    ('melee_weapon_tool', re.compile('^itmwea')),
+    ('melee_weapon_tool', re.compile('^ic[mtzfoc](kar|kam)tmwea')),
+    ('range_weapon_tool', re.compile('^itrwea')),
+    ('range_weapon_tool', re.compile('^ic[mtzfoc](kar|kam)trwea')),
+    ('jewel_tool', re.compile('^itjewel')),
+    ('jewel_tool', re.compile('^ic[mtzfoc](kar|kam)tjewel')),
+    ('tool_tool', re.compile('^ittool')),
+    ('tool_tool', re.compile('^ic[mtzfoc](kar|kam)ttool')),
+    ('pick', re.compile('^itforage')),
+    ('pick', re.compile('^ic[mtzfoc](kar|kam)tforage')),
+
+    # Misc items
+    ('skin1', re.compile('^ic[mtzfoc].*_1$')),
+    ('skin2', re.compile('^ic[mtzfoc].*_2$')),
+    ('skin3', re.compile('^ic[mtzfoc].*_3$')),
     ('matis', re.compile('^icm')),
     ('tryker', re.compile('^ict')),
     ('zorai', re.compile('^icz')),
     ('fyros', re.compile('^icf')),
+
+    # Misc materials
+    ('material', re.compile('^m')),
     ('forest', re.compile('^m.*f\w\d{2}$')),
     ('lac', re.compile('^m.*l\w\d{2}$')),
     ('jungle', re.compile('^m.*j\w\d{2}$')),
     ('desert', re.compile('^m.*d\w\d{2}$')),
     ('prime_root', re.compile('^m.*p\w\d{2}$')),
-    ('skin1', re.compile('^ic[mtzf].*_1$')),
-    ('skin2', re.compile('^ic[mtzf].*_2$')),
-    ('skin3', re.compile('^ic[mtzf].*_3$')),
+
+    # Misc
+    ('catalyser', re.compile('^ixpca01$')),
 )
