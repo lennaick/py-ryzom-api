@@ -63,10 +63,55 @@ class ItemsTest(unittest.TestCase):
         self.assertFalse(i1 < i2)
         self.assertTrue(i1 <= i2)
 
+        ordered_items = [
+            # armors
+            Item('iccalb.sitem'),
+            Item('icmalb_3.sitem'),
+            Item('iccalg.sitem'),
+            Item('ictalv_3.sitem'),
+            Item('icmamg_3.sitem'),
+            Item('icmams_3.sitem'),
+            Item('icmahv_2.sitem'),
+            Item('ictahh_3.sitem'),
+            # jewels
+            Item('icfjb.sitem'),
+            Item('icfjp.sitem'),
+            Item('icfjr.sitem'),
+            Item('ictjb.sitem'),
+            Item('ictjb_3.sitem'),
+            # tools
+            Item('icokartarmor_1'),
+            Item('itammo'),
+            Item('icokartmwea_2.sitem'),
+            Item('icokartrwea_2.sitem'),
+            Item('icokartjewel_1.sitem'),
+            Item('ittool.sitem'),
+            Item('icokartforage_1.sitem'),
+            # misc
+            Item('ixpca01.sitem'),
+        ]
+        self.assertTrue(all(ordered_items[i] < ordered_items[i + 1] for i in range(len(ordered_items) - 1)))
+
+    def test_armor(self):
+        self.assertIn('armor', Item('iccalg.sitem').tags)
+        self.assertIn('light_armor', Item('iccalg.sitem').tags)
+        self.assertIn('gloves', Item('iccalg.sitem').tags)
+
+        self.assertIn('armor', Item('icmamv_3.sitem').tags)
+        self.assertIn('medium_armor', Item('icmamv_3.sitem').tags)
+        self.assertIn('vest', Item('icmamv_3.sitem').tags)
+        self.assertIn('matis', Item('icmamv_3.sitem').tags)
+        self.assertIn('skin3', Item('icmamv_3.sitem').tags)
+
+        self.assertIn('armor', Item('ictahh_3').tags)
+        self.assertIn('heavy_armor', Item('ictahh_3').tags)
+        self.assertIn('helmet', Item('ictahh_3').tags)
+        self.assertIn('tryker', Item('ictahh_3').tags)
+
     def test_jewels(self):
-        self.assertIn('jewel', Item('icfjr.').tags)
-        self.assertIn('fyros', Item('icfjr.').tags)
-        self.assertIn('ring', Item('icfjr.').tags)
+        self.assertIn('jewel', Item('icfjr').tags)
+        self.assertIn('fyros', Item('icfjr').tags)
+        self.assertIn('ring', Item('icfjr').tags)
 
         self.assertIn('jewel', Item('ictjp_3.sitem').tags)
         self.assertIn('tryker', Item('ictjp_3.sitem').tags)
