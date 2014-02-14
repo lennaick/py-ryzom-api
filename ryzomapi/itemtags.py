@@ -29,8 +29,8 @@ available_tags = (
     ('medium_armor', re.compile('^ic[mtzfocb]am')),
     ('heavy_armor', re.compile('^ic[mtzfocb]ah')),
 
-    # Weapons
-    ('weapon', re.compile('^ic[mtzfocb]m')),
+    # Melee weapons
+    ('melee_weapon', re.compile('^ic[mtzfocb]m')),
     ('one_handed', re.compile('^ic[mtzfocb]m1')),
     ('two_handed', re.compile('^ic[mtzfocb]m2')),
     ('sword', re.compile('^ic[mtzfocb]m[12]ss[elbw]?')),
@@ -41,10 +41,13 @@ available_tags = (
     ('magic_amplifier', re.compile('^ic[mtzfocb]m[12]ms[elbw]?')),
     ('pike', re.compile('^ic[mtzfocb]m[12]pp[elbw]?')),
     ('staff', re.compile('^ic[mtzfocb]m[12]bs[elbw]?')),
-    # ('', re.compile('^ic[mtzfocb]m[12][elbw]?')),
-    # ('', re.compile('^ic[mtzfocb]m[12][elbw]?')),
-    # ('', re.compile('^ic[mtzfocb]m[12][elbw]?')),
-    # ('', re.compile('^ic[mtzfocb]m[12][elbw]?')),
+
+    # Range weapon
+    ('range_weapon', re.compile('^ic[mtzfocb]r')),
+    ('autolauncher', re.compile('^ic[mtzfocb]r2a[elbw]?')),
+    ('launcher', re.compile('^ic[mtzfocb]r2l[elbw]?')),
+    ('pistol', re.compile('^ic[mtzfocb]r1p[elbw]?')),
+    ('rifle', re.compile('^ic[mtzfocb]r2r[elbw]?')),
 
     #Jewels
     ('jewel', re.compile('^ic[mtzfocb]j[abdepr]')),
@@ -74,6 +77,7 @@ available_tags = (
     ('pick', re.compile('^ic[mtzfocb](kar|kam)tforage')),
 
     # Misc items
+    ('weapon', re.compile('^ic[mtzfocb][mr]')),
     ('skin1', re.compile('^ic[mtzfocb].*_1$')),
     ('skin2', re.compile('^ic[mtzfocb].*_2$')),
     ('skin3', re.compile('^ic[mtzfocb].*_3$')),
