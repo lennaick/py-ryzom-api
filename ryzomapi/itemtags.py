@@ -29,6 +29,23 @@ available_tags = (
     ('medium_armor', re.compile('^ic[mtzfoc]am')),
     ('heavy_armor', re.compile('^ic[mtzfoc]ah')),
 
+    # Weapons
+    ('weapon', re.compile('^ic[mtzfoc]m')),
+    ('one_handed', re.compile('^ic[mtzfoc]m1')),
+    ('two_handed', re.compile('^ic[mtzfoc]m2')),
+    ('sword', re.compile('^ic[mtzfoc]m[12]ss[elbw]?')),
+    ('mace', re.compile('^ic[mtzfoc]m[12]bm[elbw]?')),
+    ('axe', re.compile('^ic[mtzfoc]m[12]sa[elbw]?')),
+    ('spear', re.compile('^ic[mtzfoc]m[12]ps[elbw]?')),
+    ('dagger', re.compile('^ic[mtzfoc]m[12]pd[elbw]?')),
+    ('magic_amplifier', re.compile('^ic[mtzfoc]m[12]ms[elbw]?')),
+    ('pike', re.compile('^ic[mtzfoc]m[12]pp[elbw]?')),
+    # ('', re.compile('^ic[mtzfoc]m[12][elbw]?')),
+    # ('', re.compile('^ic[mtzfoc]m[12][elbw]?')),
+    # ('', re.compile('^ic[mtzfoc]m[12][elbw]?')),
+    # ('', re.compile('^ic[mtzfoc]m[12][elbw]?')),
+    # ('', re.compile('^ic[mtzfoc]m[12][elbw]?')),
+
     #Jewels
     ('jewel', re.compile('^ic[mtzfoc]j[abdepr]')),
     ('anklet', re.compile('^ic[mtzfoc]ja')),

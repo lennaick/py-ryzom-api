@@ -73,10 +73,18 @@ class ItemsTest(unittest.TestCase):
             Item('icmams_3.sitem'),
             Item('icmahv_2.sitem'),
             Item('ictahh_3.sitem'),
+            # melee weapons
+            Item('icmm1ss_3.sitem'),
+            Item('icmm1sa_3.sitem'),
+            Item('icfm1ps'),
+            Item('iccm2ss.sitem'),
+            Item('icmm2pp'),
+            Item('ictm2ms_3.sitem'),
+            Item('iczm2ms.sitem'),
             # jewels
-            Item('icfjb.sitem'),
+            Item('icfjb'),
             Item('icfjp.sitem'),
-            Item('icfjr.sitem'),
+            Item('icfjr'),
             Item('ictjb.sitem'),
             Item('ictjb_3.sitem'),
             # tools
