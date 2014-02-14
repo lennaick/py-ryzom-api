@@ -23,6 +23,10 @@ Weapons
 -------
 
 * weapon
+
+Melee weapons
+^^^^^^^^^^^^^
+
 * melee_weapon
 * one_handed
 * two_handed
@@ -34,6 +38,10 @@ Weapons
 * magic_amplifier
 * pike
 * staff
+
+Range weapons
+^^^^^^^^^^^^^
+
 * range_weapon
 * autolauncher
 * launcher
