@@ -120,9 +120,9 @@ class ItemStats:
 class Item:
     __url_attrs = {'sheet': 'sheetid', 'quality': 'q', 'color': 'c', 'stack': 's', 'sap': 'sap', 'destroyed': 'destroyed', 'locked': 'locked'}
     __allowed = {'sheet': str, 'quality': int, 'color': int, 'stack': int, 'sapload': int, 'destroyed': int, 'locked': int}
-    __tag_sort_order = ('light_boots', 'light_gloves', 'light_pants', 'light_sleeves', 'light_vest',
-                        'medium_boots', 'medium_gloves', 'medium_pants', 'medium_sleeves', 'medium_vest',
-                        'heavy_boots', 'heavy_gloves', 'heavy_pants', 'heavy_sleeves', 'heavy_vest', 'heavy_helmet',
+    __tag_sort_order = (('light_armor', 'boots'), ('light_armor', 'gloves'), ('light_armor', 'pants'), ('light_armor', 'sleeves'), ('light_armor', 'vest'),
+                        ('medium_armor', 'boots'), ('medium_armor', 'gloves'), ('medium_armor', 'pants'), ('medium_armor', 'sleeves'), ('medium_armor', 'vest'),
+                        ('heavy_armor', 'boots'), ('heavy_armor', 'gloves'), ('heavy_armor', 'pants'), ('heavy_armor', 'sleeves'), ('heavy_armor', 'vest'), ('heavy_armor', 'helmet'),
                         'jewel',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
                         'catalyser')
@@ -177,9 +177,11 @@ class Item:
 
     def __lt__(self, other):
         for tag in self.__tag_sort_order:
-            if tag in self.tags and tag not in other.tags:
+            if isinstance(tag, str):
+                tag = (tag, )
+            if all(t in self.tags for t in tag) and any(t not in other.tags for t in tag):
                 return True
-            if tag not in self.tags and tag in other.tags:
+            if any(t not in self.tags for t in tag) and all(t in other.tags for t in tag):
                 return False
         if self.__attr_lt(other, 'quality'):
             return True
