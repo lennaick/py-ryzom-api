@@ -125,7 +125,8 @@ class Item:
                         ('heavy_armor', 'boots'), ('heavy_armor', 'gloves'), ('heavy_armor', 'pants'), ('heavy_armor', 'sleeves'), ('heavy_armor', 'vest'), ('heavy_armor', 'helmet'),
                         'dagger', ('one_handed', 'sword'), ('one_handed', 'mace'), ('one_handed', 'axe'), 'spear', 'staff',
                         ('two_handed', 'sword'), ('two_handed', 'axe'), ('two_handed', 'mace'), 'pike', 'magic_amplifier',
-                        'autolauncher', 'launcher', 'pistol', 'rifle',
+                        'autolauncher', 'launcher', 'pistol', 'bowpistol', 'rifle', 'bowrifle',
+                        'autolauncher_ammo', 'launcher_ammo', 'pistol_ammo', 'bowpistol_ammo', 'rifle_ammo', 'bowrifle_ammo',
                         'jewel',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
                         'catalyser')

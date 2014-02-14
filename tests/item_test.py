@@ -80,14 +80,21 @@ class ItemsTest(unittest.TestCase):
             Item('icbm1bs.sitem'),
             Item('iccm2ss.sitem'),
             Item('icmm2pp'),
+            Item('icokarm2pp_1.sitem'),
             Item('ictm2ms_3.sitem'),
             Item('iczm2ms.sitem'),
-            # raneg weapons
+            # range weapons
             Item('icmr2a.sitem'),
             Item('icfr2l.sitem'),
             Item('iczr2l.sitem'),
             Item('icmr1p'),
             Item('ictr2r.sitem'),
+            # ammo
+            Item('iczp2lb.sitem'),
+            Item('iczp2lp.sitem'),
+            Item('icmp1pb.sitem'),
+            Item('iczp1pp'),
+            Item('iczp2rp'),
             # jewels
             Item('icfjb'),
             Item('icfjp.sitem'),
