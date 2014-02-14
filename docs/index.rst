@@ -25,6 +25,7 @@ Reference
    :maxdepth: 1
 
    reference/*
+   tag_list
 
 
 Indices and tables

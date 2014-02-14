@@ -29,6 +29,9 @@ available_tags = (
     ('medium_armor', re.compile('^ic[mtzfocb]am')),
     ('heavy_armor', re.compile('^ic[mtzfocb]ah')),
 
+    # Weapons
+    ('weapon', re.compile('^ic[mtzfocb][mr]')),
+
     # Melee weapons
     ('melee_weapon', re.compile('^ic[mtzfocb](kar|kam)?m')),
     ('one_handed', re.compile('^ic[mtzfocb](kar|kam)?m1')),
@@ -63,7 +66,7 @@ available_tags = (
     ('rifle_ammo', re.compile('ic[mtzfocb]p2r[bps]')),
     ('bowrifle_ammo', re.compile('ic[mtzfocb]p2b[bps]')),
 
-    #Jewels
+    # Jewels
     ('jewel', re.compile('^ic[mtzfocb]j[abdepr]')),
     ('anklet', re.compile('^ic[mtzfocb]ja')),
     ('bracelet', re.compile('^ic[mtzfocb]jb')),
@@ -90,17 +93,7 @@ available_tags = (
     ('pick', re.compile('^itforage')),
     ('pick', re.compile('^ic[mtzfocb](kar|kam)tforage')),
 
-    # Misc items
-    ('weapon', re.compile('^ic[mtzfocb][mr]')),
-    ('skin1', re.compile('^ic[mtzfocb].*_1$')),
-    ('skin2', re.compile('^ic[mtzfocb].*_2$')),
-    ('skin3', re.compile('^ic[mtzfocb].*_3$')),
-    ('matis', re.compile('^icm')),
-    ('tryker', re.compile('^ict')),
-    ('zorai', re.compile('^icz')),
-    ('fyros', re.compile('^icf')),
-
-    # Misc materials
+    # Materials
     ('material', re.compile('^m')),
     ('forest', re.compile('^m.*f\w\d{2}$')),
     ('lac', re.compile('^m.*l\w\d{2}$')),
@@ -109,5 +102,12 @@ available_tags = (
     ('prime_root', re.compile('^m.*p\w\d{2}$')),
 
     # Misc
+    ('skin1', re.compile('^ic[mtzfocb].*_1$')),
+    ('skin2', re.compile('^ic[mtzfocb].*_2$')),
+    ('skin3', re.compile('^ic[mtzfocb].*_3$')),
+    ('matis', re.compile('^icm')),
+    ('tryker', re.compile('^ict')),
+    ('zorai', re.compile('^icz')),
+    ('fyros', re.compile('^icf')),
     ('catalyser', re.compile('^ixpca01$')),
 )

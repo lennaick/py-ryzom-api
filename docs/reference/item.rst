@@ -12,7 +12,7 @@ Item
 
    .. py:attribute:: ryzomapi.Item.tags
 
-      (list) List of tags characterizing the item
+      (list) List of :ref:`tags <taglst>` characterizing the item
 
    .. py:attribute:: ryzomapi.Item.sheet
 
