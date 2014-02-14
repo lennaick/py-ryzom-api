@@ -123,7 +123,7 @@ class Item:
     __tag_sort_order = (('light_armor', 'boots'), ('light_armor', 'gloves'), ('light_armor', 'pants'), ('light_armor', 'sleeves'), ('light_armor', 'vest'),
                         ('medium_armor', 'boots'), ('medium_armor', 'gloves'), ('medium_armor', 'pants'), ('medium_armor', 'sleeves'), ('medium_armor', 'vest'),
                         ('heavy_armor', 'boots'), ('heavy_armor', 'gloves'), ('heavy_armor', 'pants'), ('heavy_armor', 'sleeves'), ('heavy_armor', 'vest'), ('heavy_armor', 'helmet'),
-                        ('one_handed', 'dagger'), ('one_handed', 'sword'), ('one_handed', 'mace'), ('one_handed', 'axe'), ('one_handed', 'spear'),
+                        ('one_handed', 'dagger'), ('one_handed', 'sword'), ('one_handed', 'mace'), ('one_handed', 'axe'), ('one_handed', 'spear'), ('one_handed', 'staff'),
                         ('two_handed', 'sword'), ('two_handed', 'axe'), ('two_handed', 'mace'), ('two_handed', 'pike'), ('two_handed', 'magic_amplifier'),
                         'jewel',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',

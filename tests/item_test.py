@@ -77,6 +77,7 @@ class ItemsTest(unittest.TestCase):
             Item('icmm1ss_3.sitem'),
             Item('icmm1sa_3.sitem'),
             Item('icfm1ps'),
+            Item('icbm1bs.sitem'),
             Item('iccm2ss.sitem'),
             Item('icmm2pp'),
             Item('ictm2ms_3.sitem'),
