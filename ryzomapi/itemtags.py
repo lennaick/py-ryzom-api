@@ -21,11 +21,11 @@ available_tags = (
     ('armor', re.compile('^ic[mtzfocb]a')),
     ('boots', re.compile('^ic[mtzfocb]a[lmh]b')),
     ('gloves', re.compile('^ic[mtzfocb]a[lmh]g')),
-    ('pants', re.compile('^ic[mtzfocb]a[lmh]p')),
+    ('pants', re.compile('^ic[mtzfocb]a[lmhc]p')),
     ('sleeves', re.compile('^ic[mtzfocb]a[lmh]s')),
     ('vest', re.compile('^ic[mtzfocb]a[lmh]v')),
     ('helmet', re.compile('^ic[mtzfocb]a[lmh]h')),
-    ('light_armor', re.compile('^ic[mtzfocb]al')),
+    ('light_armor', re.compile('^ic[mtzfocb]a[lc]')),
     ('medium_armor', re.compile('^ic[mtzfocb]am')),
     ('heavy_armor', re.compile('^ic[mtzfocb]ah')),
 
@@ -100,6 +100,7 @@ available_tags = (
     ('jungle', re.compile('^m.*j\w\d{2}$')),
     ('desert', re.compile('^m.*d\w\d{2}$')),
     ('prime_root', re.compile('^m.*p\w\d{2}$')),
+    ('common', re.compile('^m.*c\w\d{2}$')),
 
     # Misc
     ('skin1', re.compile('^ic[mtzfocb].*_1$')),

@@ -68,6 +68,7 @@ class ItemsTest(unittest.TestCase):
             Item('iccalb.sitem'),
             Item('icmalb_3.sitem'),
             Item('iccalg.sitem'),
+            Item('icmacp_3.sitem'),
             Item('ictalv_3.sitem'),
             Item('icmamg_3.sitem'),
             Item('icmams_3.sitem'),
