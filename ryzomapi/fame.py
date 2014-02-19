@@ -35,7 +35,7 @@ class Allegiance:
     nation = None
 
     def __init__(self, faction=None, nation=None):
-        if faction is not None and faction in Fame.faction:
+        if faction is not None and faction.lower() in Fame.faction:
             self.faction = faction.lower()
-        if nation is not None and nation in Fame.nation:
+        if nation is not None and nation.lower() in Fame.nation:
             self.nation = nation.lower()
