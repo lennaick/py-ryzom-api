@@ -127,6 +127,8 @@ class Item:
                         ('two_handed', 'sword'), ('two_handed', 'axe'), ('two_handed', 'mace'), 'pike', 'magic_amplifier',
                         'autolauncher', 'launcher', 'pistol', 'bowpistol', 'rifle', 'bowrifle',
                         'autolauncher_ammo', 'launcher_ammo', 'pistol_ammo', 'bowpistol_ammo', 'rifle_ammo', 'bowrifle_ammo',
+                        'op_mat', 'blade', 'point', 'hammer', 'counterweight', 'shaft', 'ammo_bullet', 'barrel', 'armor_shell', 'ammo_jacket', 'lining', 'explosive', 'stuffing', 'firing_pin', 'armor_clip', 'trigger', 'jewel_setting', 'grip', 'clothes', 'jewel', 'magic_focus',
+                        'kitin_larva',
                         'jewel',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
                         'catalyser')
@@ -137,9 +139,10 @@ class Item:
             self.__load_from_xml(xml)
         self.tags = []
         if self.sheet is not None:
-            for tag_name, tag_re in itemtags.available_tags:
+            for tag_name, tag_re in itemtags.common_tags:
                 if re.match(tag_re, self.sheet):
                     self.tags.append(tag_name)
+            self.__set_material_tags()
 
     def icon_url(self, escape_url=False):
         params = {}
@@ -162,6 +165,14 @@ class Item:
             if hasattr(self.stats, 'color'):
                 setattr(self, 'color', self.stats.color)
         self.sheet = splitext(str(self.sheet or ''))[0]
+
+    def __set_material_tags(self):
+        if 'material' in self.tags:
+            res = itemtags.material_type_re.search(self.sheet)
+            if res:
+                mat_id = int(res.group(1))
+                if mat_id in itemtags.material_specific_tags:
+                    self.tags += itemtags.material_specific_tags[mat_id]
 
     def __attr_lt(self, other, attr_name):
         if not hasattr(self, attr_name) and not hasattr(other, attr_name):
