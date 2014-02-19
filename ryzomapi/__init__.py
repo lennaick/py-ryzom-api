@@ -130,6 +130,7 @@ class Item:
                         'op_mat', 'blade', 'point', 'hammer', 'counterweight', 'shaft', 'ammo_bullet', 'barrel', 'armor_shell', 'ammo_jacket', 'lining', 'explosive', 'stuffing', 'firing_pin', 'armor_clip', 'trigger', 'jewel_setting', 'grip', 'clothes', 'jewel', 'magic_focus',
                         'kitin_larva',
                         'jewel',
+                        'large_shield', 'buckler',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
                         'catalyser')
 

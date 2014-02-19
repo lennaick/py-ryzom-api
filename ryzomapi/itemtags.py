@@ -75,6 +75,11 @@ common_tags = (
     ('pendant', re.compile('^ic[mtzfocb]jp')),
     ('ring', re.compile('^ic[mtzfocb]jr')),
 
+    # Shields
+    ('shield', re.compile('^ic[mtzfocb](kar|kam)?s')),
+    ('large_shield', re.compile('^ic[mtzfocb](kar|kam)?ss')),
+    ('buckler', re.compile('^ic[mtzfocb](kar|kam)?sb')),
+
     # Tools
     ('tool', re.compile('^it')),
     ('tool', re.compile('^ic[mtzfocb](kar|kam)t')),
