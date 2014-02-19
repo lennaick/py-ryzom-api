@@ -98,6 +98,16 @@ common_tags = (
     ('pick', re.compile('^itforage')),
     ('pick', re.compile('^ic[mtzfocb](kar|kam)tforage')),
 
+    # Teleporters
+    ('teleporter', re.compile('^tp_')),
+    ('karavan', re.compile('^tp_karavan')),
+    ('kami', re.compile('^tp_kami')),
+    ('fyros', re.compile('^tp_(karavan|kami)_(dyron|frahartowers|oflovaksoasis|outlawcanyon|pyr|sawdustmines|thescorchedcorridor|thesos)')),
+    ('matis', re.compile('^tp_(karavan|kami)_(avalae|davae|fleetinggarden|groveofconfusion|hereticshovel|hiddensource|knollofdissent|natae|upperbog|yrkanis)')),
+    ('tryker', re.compile('^tp_(karavan|kami)_(avendale|bountybeaches|crystabell|dewdrops|enchantedisle|fairhaven|lagoonsofloria|restingwater|thefount|windermeer|windsofmuse)')),
+    ('zorai', re.compile('^tp_(karavan|kami)_(groveofumbra|havenofpurity|hoi_cho|jen_lai|knotofdementia|maidengrove|min_cho|thevoid|zora)')),
+    ('prime_root', re.compile('^tp_(karavan|kami)_(almati|forbidden_depths|gate_of_obscurity|nexus_terre|the_abyss_of_ichor_matis|the_elusive_forest|the_land_of_continuity|the_sunken_city|the_trench_of_trials_zorai|the_under_spring_fyros|the_windy_gate)')),
+
     # Materials
     ('material', re.compile('^m')),
     ('forest', re.compile('^m.*f\w\d{2}$')),

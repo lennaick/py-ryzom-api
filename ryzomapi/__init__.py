@@ -132,6 +132,7 @@ class Item:
                         'jewel',
                         'large_shield', 'buckler',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
+                        ('teleporter', 'fyros'), ('teleporter', 'matis'), ('teleporter', 'tryker'), ('teleporter', 'zorai'), ('teleporter', 'prime_root'),
                         'catalyser')
 
     def __init__(self, sheetid=None, xml=None):
