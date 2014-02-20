@@ -34,6 +34,8 @@ class CharacterTest(unittest.TestCase):
         character = Character(from_file='tests/data/character_2.xml')
         self.assertEqual(character.id, 6942)
         self.assertEqual(len(character.bag), 56)
+        self.assertEqual(len(character.pets), 4)
+        self.assertEqual(character.pets[0].status, 'landscape')
 
     def test_character_invalid_data(self):
         with self.assertRaises(InvalidAPIKeyException):

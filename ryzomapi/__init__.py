@@ -216,10 +216,38 @@ class Item:
         return not self.__eq__(other)
 
 
+@total_ordering
+class Pet:
+    def __init__(self, xml=None):
+        if xml is not None:
+            self.index = int(xml.get('index'))
+            self.status = xml.find('status').text
+            self.satiety = float(xml.find('satiety').text)
+
+            inv = xml.find('inventory')
+            if inv is not None:
+                lst = []
+                for i in inv.findall('item'):
+                    lst.append(Item(xml=i))
+                lst.sort()
+                setattr(self, 'inventory', lst)
+
+    def __lt__(self, other):
+        return self.index < other.index
+
+    def __eq__(self, other):
+        return self.index == other.index
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+
 class Character:
     __allowed = ('id', 'name', 'shard', 'race', 'gender')
 
     def __init__(self, api_key=None, from_file=None):
+        self.pets = []
+
         if api_key is not None or from_file is not None:
             self.__load(api_key, from_file)
 
@@ -243,6 +271,13 @@ class Character:
         f = node.find('fame')
         if f is not None:
             setattr(self, 'fame', fame.Fame(f))
+
+        p = node.find('pets')
+        if p is not None:
+            for a in p.findall('animal'):
+                pet = Pet(a)
+                self.pets.append(pet)
+            self.pets.sort()
 
         for container in ('bag', 'room', 'shop'):
             f = node.find(container)

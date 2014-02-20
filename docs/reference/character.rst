@@ -23,23 +23,27 @@ Character
 
    .. py:attribute:: ryzomapi.Character.fame
 
-      (ryzomapi.fame.Fame) The character's fames.
+      (ryzomapi.fame.Fame) The character's fames
 
    .. py:attribute:: ryzomapi.Character.gender
 
-      (string) The character's gender.
+      (string) The character's gender
 
    .. py:attribute:: ryzomapi.Character.id
 
-      (int) The character's id.
+      (int) The character's id
 
    .. py:attribute:: ryzomapi.Character.name
 
-      (string) The character's name.
+      (string) The character's name
+
+   .. py:attribute:: ryzomapi.Character.pets
+
+      (list) sorted list of :ref:`Pet <pet>`
 
    .. py:attribute:: ryzomapi.Character.race
 
-      (string) The character's race.
+      (string) The character's race
 
    .. py:attribute:: ryzomapi.Character.room
 
@@ -47,7 +51,7 @@ Character
 
    .. py:attribute:: ryzomapi.Character.shard
 
-      (string) The shard's name.
+      (string) The shard's name
 
    .. py:attribute:: ryzomapi.Character.shop
 
