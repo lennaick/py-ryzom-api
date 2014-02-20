@@ -219,6 +219,7 @@ Foraged materials
 * perfling
 * pha
 * pilan
+* redhot
 * sarina
 * saurona
 * scratch
@@ -243,7 +244,6 @@ Quartered materials
 * bawaab
 * bodoc
 * bolobi
-* capriny
 * capryni
 * clopper
 * cratcha
@@ -273,7 +273,6 @@ Quartered materials
 * kizoar
 * lumper
 * madakam
-* maga
 * mektoub
 * messab
 * najab
@@ -282,7 +281,6 @@ Quartered materials
 * psykopla
 * ragus
 * raspal
-* redhot
 * rendor
 * shalah
 * shooki
@@ -310,6 +308,7 @@ Outpost materials
 * cheng
 * egiros
 * greslin
+* maga
 * rubbarn
 * tekorn
 * vedice

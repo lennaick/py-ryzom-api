@@ -235,7 +235,7 @@ material_specific_tags = {
     304: ['bodoc'],
     312: ['kitin_larva', 'generic'],
     314: ['bodoc', 'skull'],
-    315: ['capriny', 'skull'],
+    315: ['capryni', 'skull'],
     316: ['gingo', 'skull'],
     319: ['torbak', 'skull'],
     321: ['igara', 'skull'],
