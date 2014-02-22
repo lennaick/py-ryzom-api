@@ -109,13 +109,33 @@ common_tags = (
     ('prime_root', re.compile('^tp_(karavan|kami)_(almati|forbidden_depths|gate_of_obscurity|nexus_terre|the_abyss_of_ichor_matis|the_elusive_forest|the_land_of_continuity|the_sunken_city|the_trench_of_trials_zorai|the_under_spring_fyros|the_windy_gate)')),
 
     # Materials
-    ('material', re.compile('^m')),
+    ('material', re.compile('^m\d')),
     ('forest', re.compile('^m.*f\w\d{2}$')),
     ('lac', re.compile('^m.*l\w\d{2}$')),
     ('jungle', re.compile('^m.*j\w\d{2}$')),
     ('desert', re.compile('^m.*d\w\d{2}$')),
     ('prime_root', re.compile('^m.*p\w\d{2}$')),
     ('common', re.compile('^m.*c\w\d{2}$')),
+
+    # Enchantments
+    ('crystalized_spell', re.compile('^crystalized_spell$')),
+    ('sap_recharge', re.compile('^.*sap_recharge$')),
+
+    # Pets
+    ('pet', re.compile('^ia[ps]')),
+    ('packer', re.compile('^iap')),
+    ('mount', re.compile('^ias')),
+
+    # marauder crystal
+    ('marauder_crystal', re.compile('^marauder_teleport_crystal$')),
+
+    # Jobs items
+    ('job_item', re.compile('^rpjobitem')),
+
+    # Consumables items
+    ('fireworks', re.compile('^.*fireworks')),
+    ('consumable', re.compile('^ip')),
+    ('consumable', re.compile('^conso_')),
 
     # Misc
     ('skin1', re.compile('^ic[mtzfocb].*_1$')),
@@ -126,6 +146,7 @@ common_tags = (
     ('zorai', re.compile('^icz')),
     ('fyros', re.compile('^icf')),
     ('catalyser', re.compile('^ixpca01$')),
+    ('piece_of_kitin', re.compile('^slaughter_week_token$')),
 )
 
 material_type_re = re.compile('m(\d+)\D')
@@ -151,7 +172,7 @@ material_specific_tags = {
     48: ['goari', 'shell', 'barrel', 'armor_shell'],
     49: ['gulatch', 'oil', 'explosive', 'stuffing'],
     50: ['hash', 'amber', 'jewel', 'magic_focus'],
-    53: ['horny', 'shell', 'barrel', 'armor_shell'],
+    53: ['horny', 'shell', 'blade', 'point'],
     64: ['kachine', 'wood', 'barrel', 'armor_shell'],
     66: ['kincher', 'shell', 'barrel', 'armor_shell'],
     67: ['kincher', 'sting', 'blade', 'point'],

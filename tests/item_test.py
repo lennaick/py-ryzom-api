@@ -96,12 +96,67 @@ class ItemsTest(unittest.TestCase):
             Item('icmp1pb.sitem'),
             Item('iczp1pp'),
             Item('iczp2rp'),
-            # jewels
-            Item('icfjb'),
-            Item('icfjp.sitem'),
-            Item('icfjr'),
-            Item('ictjb.sitem'),
-            Item('ictjb_3.sitem'),
+            # materials
+            # - op
+            Item('m0741dxacc01'),
+            Item('m0743dxacc01'),
+            Item('m0753dxacc01'),
+            Item('m0755dxacc01'),
+            # - blade, point
+            Item('m0016dxape01'),
+            Item('m0067ckdjd01.sitem'),
+            Item('m0106ccepe01.sitem'),
+            Item('m0680cbcld01'),
+            # - hammer, counterweight
+            Item('m0025chcld01.sitem'),
+            Item('m0100dxaje01.sitem'),
+            Item('m0515chrfe01'),
+            Item('m0662dxape01'),
+            # - shaft, ammo_bullet
+            Item('m0136ccdjd01'),
+            Item('m0384ccldd01'),
+            Item('m0497dxapf01.sitem'),
+            Item('m0600ckfjd01.sitem'),
+            # - barrel, armor_shell
+            Item('m0040dxapf01.sitem'),
+            Item('m0376cckfc01.sitem'),
+            Item('m0469chwdd01.sitem'),
+            Item('m0485ckape01.sitem'),
+            # - ammo_jacket, lining
+            Item('m0046dxapf01'),
+            Item('m0083chgdd01'),
+            Item('m0511chbpd01.sitem'),
+            Item('m0640cpcfe01.sitem'),
+            # - explosive, stuffing
+            Item('m0103dxape01'),
+            Item('m0135ccdfd01.sitem'),
+            Item('m0366cbcld01'),
+            Item('m0557ccnpe01.sitem'),
+            # - firing_pin, armor_clip
+            Item('m0074ckede01'),
+            Item('m0109dxale01'),
+            Item('m0603ckffd01'),
+            Item('m0641ccepe01'),
+            # - trigger, jewel_setting
+            Item('m0023dxapf01.sitem'),
+            Item('m0149chlpd01.sitem'),
+            Item('m0615chvcb01.sitem'),
+            Item('m0677chuje01.sitem'),
+            # - grip, clothes
+            Item('m0006dxacb01'),
+            Item('m0118dxapf01'),
+            Item('m0367chnfd01'),
+            Item('m0553chxpd01'),
+            # - jewel, magic_focus
+            Item('m0015dxaje01'),
+            Item('m0148chlpe01'),
+            Item('m0474cpcpe01'),
+            Item('m0675chujd01'),
+            # kitin larva
+            Item('m0312dxacf01'),
+            # shields
+            Item('icmss_2'),
+            Item('icmsbl'),
             # tools
             Item('icokartarmor_1'),
             Item('itammo'),
@@ -110,7 +165,38 @@ class ItemsTest(unittest.TestCase):
             Item('icokartjewel_1.sitem'),
             Item('ittool.sitem'),
             Item('icokartforage_1.sitem'),
-            # misc
+            # jewels
+            Item('icfjb'),
+            Item('icfjp.sitem'),
+            Item('icfjr'),
+            Item('ictjb.sitem'),
+            Item('ictjb_3.sitem'),
+            # piece of kitin
+            Item('slaughter_week_token.sitem'),
+            # enchantments
+            Item('crystalized_spell.sitem'),
+            Item('item_sap_recharge'),
+            Item('light_sap_recharge.sitem'),
+            # pets
+            Item('iapf'),
+            Item('iapsff.sitem'),
+            Item('iasf.sitem'),
+            # marauder crystal
+            Item('marauder_teleport_crystal.sitem'),
+            # job items
+            Item('rpjobitem_201_a0'),
+            Item('rpjobitem_201_b0'),
+            Item('rpjobitem_201_c5'),
+            Item('rpjobitem_206_c1.sitem'),
+            # consumables items
+            Item('conso_fireworks_c'),
+            Item('conso_fireworks_g.sitem'),
+            Item('conso_fireworks_j.sitem'),
+            Item('ipk_minor_life'),
+            Item('ipoc_dex'),
+            Item('ipoc_met'),
+            Item('ipop_elc'),
+            # catalysers
             Item('ixpca01.sitem'),
         ]
         self.assertTrue(all(ordered_items[i] < ordered_items[i + 1] for i in range(len(ordered_items) - 1)))

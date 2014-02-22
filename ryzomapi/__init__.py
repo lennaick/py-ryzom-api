@@ -127,12 +127,18 @@ class Item:
                         ('two_handed', 'sword'), ('two_handed', 'axe'), ('two_handed', 'mace'), 'pike', 'magic_amplifier',
                         'autolauncher', 'launcher', 'pistol', 'bowpistol', 'rifle', 'bowrifle',
                         'autolauncher_ammo', 'launcher_ammo', 'pistol_ammo', 'bowpistol_ammo', 'rifle_ammo', 'bowrifle_ammo',
-                        'op_mat', 'blade', 'point', 'hammer', 'counterweight', 'shaft', 'ammo_bullet', 'barrel', 'armor_shell', 'ammo_jacket', 'lining', 'explosive', 'stuffing', 'firing_pin', 'armor_clip', 'trigger', 'jewel_setting', 'grip', 'clothes', 'jewel', 'magic_focus',
+                        'op_mat', 'blade', 'point', 'hammer', 'counterweight', 'shaft', 'ammo_bullet', 'barrel', 'armor_shell', 'ammo_jacket', 'lining', 'explosive', 'stuffing', 'firing_pin', 'armor_clip', 'trigger', 'jewel_setting', 'grip', 'clothes', ('material', 'jewel'), 'magic_focus',
                         'kitin_larva',
-                        'jewel',
                         'large_shield', 'buckler',
                         'armor_tool', 'ammo_tool', 'melee_weapon_tool', 'range_weapon_tool', 'jewel_tool', 'tool_tool', 'pick',
+                        'jewel',
                         ('teleporter', 'fyros'), ('teleporter', 'matis'), ('teleporter', 'tryker'), ('teleporter', 'zorai'), ('teleporter', 'prime_root'),
+                        'piece_of_kitin',
+                        'crystalized_spell', 'sap_recharge',
+                        'pet',
+                        'marauder_crystal',
+                        'job_item',
+                        'fireworks', 'consumable',
                         'catalyser')
 
     def __init__(self, sheetid=None, xml=None):

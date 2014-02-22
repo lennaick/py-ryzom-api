@@ -314,15 +314,39 @@ Outpost materials
 * vedice
 
 
+Pets
+----
+
+* pet
+* packer
+* mount
+
+
+Enchantments
+------------
+
+* crystalized_spell
+* sap_recharge
+
+Job items
+---------
+
+* job_item
+
+
 Misc
 ----
 
+* catalyser
+* consumable
+* fireworks
+* goo
+* marauder_crystal
+* piece_of_kitin
 * skin1
 * skin2
 * skin3
+* fyros
 * matis
 * tryker
 * zorai
-* fyros
-* catalyser
-* goo
